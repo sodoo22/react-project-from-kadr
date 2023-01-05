@@ -39,3 +39,55 @@
   padding: 0 10px;
   font-size: 20px;
 }
+
+.menu-container {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: center; */
+
+}
+
+/* Nav :first-child {
+  background-color: blue;
+} */
+
+.banner-container {
+
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 43px;
+  color: #1B5A7D;
+}
+
+.banner-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button1 button {
+  margin: 20px;
+}
+
+.promotion-price {
+  position: absolute;
+  background-color: #EDA415;
+  font-size: 21px;
+  color: white;
+  right: 100px;
+  bottom: 40px;
+  padding: 20px 30px;
+  border-radius: 80px;
+}
+
+.category-card-container {
+  margin: auto;
+  padding: 10px;
+  border: 1px solid #ddd;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}

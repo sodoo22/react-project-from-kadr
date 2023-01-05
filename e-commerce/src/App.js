@@ -2,18 +2,17 @@
 import './App.css';
 import { Button } from 'react-bootstrap'
 import MainMenu from './components/MainMenu';
-
+import Banner from './components/Banner';
+import CategoryCards from './components/CategoryCards';
 
 function App() {
   return (
     <div className="App">
       <div className='menu-container'>
         <MainMenu />
+        <Banner />
+        <CategoryCards />
       </div>
-
-      <button type="button" className="btn btn-danger">Danger</button>
-      <Button variant='secondary'> Test</Button>
-
     </div>
   );
 }

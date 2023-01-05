@@ -9,9 +9,9 @@ export default function SearchBar() {
                     </div>
 
                     <div className="col-4">
-                        <div class="input-group">
-                            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                            <button type="button" class="btn btn-warning">search</button>
+                        <div className="input-group">
+                            <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                            <button type="button" className="btn btn-warning">search</button>
                         </div>
                     </div>
 
@@ -21,15 +21,15 @@ export default function SearchBar() {
                     <div className="col-3 signin-container">
 
                         <div className="signin">
-                            <i class="bi bi-person"></i>
+                            <i className="bi bi-person"></i>
                             <span className="space"> </span>
                             Sign in
                         </div>
                         <div className="favorite">
-                            <i class="bi bi-suit-heart"></i>
+                            <i className="bi bi-suit-heart"></i>
                         </div>
                         <div className="basket">
-                            <i class="bi bi-cart"></i>
+                            <i className="bi bi-cart"></i>
                         </div>
                     </div>
                 </div>

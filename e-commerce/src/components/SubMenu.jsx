@@ -3,8 +3,6 @@ import { NavLink, Nav, NavDropdown } from 'react-bootstrap'
 
 
 const SubMenu = (props) => {
-
-
     const subMenu = props.children.length > 0 ? (
         <NavDropdown title={props.title}>
             {
@@ -24,7 +22,8 @@ const SubMenu = (props) => {
 
     return (
         <div>
-            <Nav className="me-auto">
+
+            <Nav className="Navbar ps-5 px-2">
                 {subMenu}
             </Nav>
         </div>
