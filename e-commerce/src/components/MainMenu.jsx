@@ -12,6 +12,7 @@ export default function MainMenu() {
     const subMenus = menus.map(subMenu => {
         return (
             <SubMenu
+                id={subMenu.id}
                 title={subMenu.title}
                 position={subMenu.position}
                 children={subMenu.children}

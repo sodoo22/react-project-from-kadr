@@ -23,7 +23,7 @@ const SubMenu = (props) => {
     return (
         <div>
 
-            <Nav className="Navbar ps-5 px-2">
+            <Nav className="Navbar ps-5 px-2" id={props.id}>
                 {subMenu}
             </Nav>
         </div>

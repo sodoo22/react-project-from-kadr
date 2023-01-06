@@ -2,12 +2,12 @@ const categories = [
     {
         title: 'Speaker',
         imgUrl: './image/speaker.png',
-        items: 6
+        items: 4
     },
     {
         title: 'Desktop & Laptop',
         imgUrl: './image/laptop.png',
-        items: 6
+        items: 5
     },
     {
         title: 'DSLR Camera',

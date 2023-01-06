@@ -20,12 +20,10 @@ function Products(props) {
 
 
     return (
-
         <div className="product-card">
             <div className="product-img-container">
                 <img src={props.imgUrl} alt="image" />
             </div>
-
             <div className="product-text">
                 <div className="">{props.title}</div>
                 <div className="">${props.price}</div>
@@ -38,10 +36,9 @@ function Products(props) {
                         initialValue={props.rating}
                         allowFraction={true}
                         size={15}
-                    /* Available Props */
                     />
                 </div>
-                <div className="basket-icon">
+                <div className="basket-icon text-center text-light">
                     <i class="bi bi-cart3"></i>
                 </div>
             </div>
@@ -52,5 +49,4 @@ function Products(props) {
 
     )
 }
-
 export default Products

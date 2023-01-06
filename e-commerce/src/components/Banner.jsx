@@ -1,9 +1,15 @@
-export default function Banner() {
+
+
+export default function Banner(props) {
+
     return (
-        <div className="row banner-container mt-4">
-            <div className="col-5 d-flex flex-column text-center banner-text">
+        <div className="row banner-container">
+            <div className="col-md-5 d-flex flex-column text-center banner-text">
                 <div className="text1">
-                    Canon Cameras
+                    {props.title}
+                </div>
+                <div className="text-short">
+                    {props.shortMessage}
                 </div>
                 <div className="button1">
                     <button type='button' className="btn btn-warning text-white"> Shop Now</button>
@@ -11,12 +17,15 @@ export default function Banner() {
                 </div>
             </div>
 
-            <div className="col-2">
+            <div className="col-md-1">
             </div>
 
-            <div className="col-5 promotion" style={{ position: 'relative' }}>
-                <div className="promotion-price">Only<br /> $89</div>
-                <img src='..\..\image\camera.png' ></img>
+            <div className="col-md-5 promotion" style={{ position: 'relative' }}>
+                <div className="promotion-price">Only<br /> ${props.price}</div>
+                <div className="banner-img-container">
+                    <img src={props.imgUrl} ></img>
+                </div>
+
             </div>
         </div >
     )
