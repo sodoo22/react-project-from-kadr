@@ -1,18 +1,51 @@
 const products = [
     {
-        title: 'Speaker',
-        imgUrl: '..\..\image\speaker.png',
-        items: 6
+        title: 'Camera',
+        imgUrl: './image/camera3.png',
+        price: 11.70,
+        rating: 5
     },
     {
-        title: 'Desktop & Laptop',
-        imgUrl: '..\..\image\laptop.png',
-        items: 6
+        title: 'Wireless headphones',
+        imgUrl: './image/headset.png',
+        price: 11.70,
+        rating: 3
     },
     {
-        title: 'DSLR Camera',
-        imgUrl: '..\..\image\camera2.png',
-        items: 6
+        title: 'Play game',
+        imgUrl: './image/play.png',
+        price: 11.70,
+        rating: 2
+    },
+    {
+        title: 'Play game',
+        imgUrl: './image/play.png',
+        price: 11.70,
+        rating: 3.5
+    },
+    {
+        title: 'Wireless headphones',
+        imgUrl: './image/headset.png',
+        price: 11.70,
+        rating: 1
+    },
+    {
+        title: 'Tablet as a laptop',
+        imgUrl: './image/notebook.png',
+        price: 11.70,
+        rating: 5
+    },
+    {
+        title: 'Wireless headphones',
+        imgUrl: './image/headset.png',
+        price: 11.70,
+        rating: 5
+    },
+    {
+        title: 'Wireless headphones',
+        imgUrl: './image/headset.png',
+        price: 11.70,
+        rating: 5
     },
 ]
 

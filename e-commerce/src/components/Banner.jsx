@@ -14,9 +14,9 @@ export default function Banner() {
             <div className="col-2">
             </div>
 
-            <div className="col-5" style={{ position: 'relative' }}>
+            <div className="col-5 promotion" style={{ position: 'relative' }}>
                 <div className="promotion-price">Only<br /> $89</div>
-                <img src='..\..\image\camera.png'></img>
+                <img src='..\..\image\camera.png' ></img>
             </div>
         </div >
     )
