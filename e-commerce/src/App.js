@@ -72,19 +72,29 @@ function App() {
         </AliceCarousel>
 
 
-        <AliceCarousel autoPlay autoPlayInterval="3000">
+        <AliceCarousel autoPlay autoPlayInterval="3000"
+          responsive={{
+            0: { items: 3 }
+          }}>
           {categories}
         </AliceCarousel>
 
 
+        <AliceCarousel autoPlay autoPlayInterval="3000"
+          responsive={{
+            0: {
+              items: 4,
+            },
+            1024: {
+              items: 8,
+              itemsFit: 'fill',
+            }
 
-
-
-
-
-        <div className="product-cards-container">
+          }}>
+          {/* <div className="product-cards-container"> */}
           {products}
-        </div>
+          {/* </div> */}
+        </AliceCarousel>
 
 
         <br /><br /><br />
@@ -93,8 +103,11 @@ function App() {
         </AliceCarousel>
 
 
+
+
+
       </div>
-    </div>
+    </div >
   );
 }
 
