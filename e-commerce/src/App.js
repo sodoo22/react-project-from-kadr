@@ -11,9 +11,7 @@ import bannerData from './data/banner-items'
 import Category from './components/Category';
 import Products from './components/Products';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Carousel } from '@trendyol-js/react-carousel';
-// import { Item } from './yourItem';
+
 
 function App() {
 
@@ -80,9 +78,7 @@ function App() {
 
 
 
-        <Carousel>
-          {images}
-        </Carousel>
+
 
 
 
