@@ -11,6 +11,7 @@ import bannerData from './data/banner-items'
 import Category from './components/Category';
 import Products from './components/Products';
 import React from 'react';
+import Banner2 from './components/Banner2';
 
 
 function App() {
@@ -61,6 +62,8 @@ function App() {
   })
 
 
+
+
   return (
     <div className="App">
       <div className='container'>
@@ -102,7 +105,7 @@ function App() {
           {images}
         </AliceCarousel>
 
-
+        <Banner2/>
 
 
 

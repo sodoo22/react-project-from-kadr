@@ -9,9 +9,8 @@
   margin-left: 20px;
 }
 
-
 .searchbar-container {
-  background-color: #003F62;
+  background-color: #003f62;
   height: 100px;
   display: flex;
   justify-content: center;
@@ -38,14 +37,14 @@
 .basket {
   padding: 0 10px;
   font-size: 20px;
+  position: relative;
 }
-
 
 .banner-container {
   font-family: "Poppins";
   font-weight: 700;
   font-size: 43px;
-  color: #1B5A7D;
+  color: #1b5a7d;
 }
 
 .banner-text {
@@ -65,7 +64,7 @@
 
 .promotion-price {
   position: absolute;
-  background-color: #EDA415;
+  background-color: #eda415;
   font-size: 21px;
   color: white;
   right: 30px;
@@ -152,7 +151,8 @@
   flex-wrap: wrap;
 }
 
-.product-ratings {}
+.product-ratings {
+}
 
 .basket-icon {
   width: 30px;
@@ -163,11 +163,11 @@
   /* padding: 50px; */
   border-radius: 15px;
 
-  background-color: #EDA415;
+  background-color: #eda415;
 }
 
 #menu-item-1 {
-  background-color: #EDA415;
+  background-color: #eda415;
   color: red;
 }
 
