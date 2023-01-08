@@ -91,9 +91,9 @@ function App() {
             }
 
           }}>
-          {/* <div className="product-cards-container"> */}
+          <div className="product-cards-container">
           {products}
-          {/* </div> */}
+          </div>
         </AliceCarousel>
 
 
