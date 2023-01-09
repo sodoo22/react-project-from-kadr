@@ -47,11 +47,20 @@
   color: #1b5a7d;
 }
 
+.banner-container2 {
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 43px;
+  color: #1b5a7d;
+  position: relative;
+}
+
 .banner-text {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 
 .banner-container .text-short {
   font-size: 25px;
@@ -151,7 +160,6 @@
   flex-wrap: wrap;
 }
 
-.product-ratings {}
 
 .basket-icon {
   width: 30px;
@@ -185,4 +193,31 @@
   width: auto;
   display: flex;
   /* overflow: scroll; */
+}
+
+.container-banner2 {
+  position: relative;
+}
+
+.banner2-img {
+  height: auto;
+  max-width: 100%;
+}
+
+.banner2-text-container {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+
+.banner2-text {
+  color: #2E8FC5;
+  font-size: 41px;
+}
+
+.banner2-text-small {
+  color: white;
+  font-size: 18px;
+  font-weight: 500px;
+
 }

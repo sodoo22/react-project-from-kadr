@@ -7,7 +7,7 @@ function Category(props) {
                 </div>
                 <div className="category-text text-center">
                     <div className="title">{props.title}</div>
-                    <div className="item text-center">{props.items}</div>
+                    <div className="item text-center">{props.items} items</div>
                 </div>
 
             </div>

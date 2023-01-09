@@ -24,6 +24,11 @@ const categories = [
         imgUrl: './image/camera2.png',
         items: 6
     },
+    {
+        title: 'DSLR Camera',
+        imgUrl: './image/camera2.png',
+        items: 6
+    },
 ]
 
 export default categories;

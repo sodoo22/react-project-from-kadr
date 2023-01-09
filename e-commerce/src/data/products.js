@@ -15,8 +15,8 @@ const products = [
     },
     {
         id: 3,
-        title: 'Play game',
-        imgUrl: './image/play.png',
+        title: 'Macbook Air',
+        imgUrl: './image/macbook5.png',
         price: 11.70,
         rating: 2
     },
@@ -29,8 +29,8 @@ const products = [
     },
     {
         id: 5,
-        title: 'Wireless headphones',
-        imgUrl: './image/headset.png',
+        title: 'iWatch',
+        imgUrl: './image/iwatch.jpg',
         price: 11.70,
         rating: 1
     },
@@ -50,30 +50,30 @@ const products = [
     },
     {
         id: 8,
-        title: 'Wireless headphones',
-        imgUrl: './image/headset.png',
-        price: 11.70,
+        title: 'Macbook Air',
+        imgUrl: './image/macbook.jpg',
+        price: 1111,
         rating: 5
     },
     {
         id: 9,
-        title: 'Camera',
-        imgUrl: './image/camera3.png',
-        price: 11.70,
-        rating: 5
-    },
-    {
-        id: 10,
         title: 'Wireless headphones',
         imgUrl: './image/headset.png',
         price: 11.70,
         rating: 3
     },
     {
-        id: 11,
-        title: 'Play game',
-        imgUrl: './image/play.png',
+        id: 10,
+        title: 'Camera',
+        imgUrl: './image/camera3.png',
         price: 11.70,
+        rating: 5
+    },
+    {
+        id: 11,
+        title: 'iWatch',
+        imgUrl: './image/iwatch.jpg',
+        price: 299,
         rating: 2
     },
     {

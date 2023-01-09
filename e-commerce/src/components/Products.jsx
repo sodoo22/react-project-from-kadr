@@ -47,9 +47,6 @@ function Products(props) {
                     </a>
                 </div>
             </div>
-
-
-
         </div>
 
     )
