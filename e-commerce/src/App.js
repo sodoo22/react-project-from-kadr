@@ -13,7 +13,6 @@ import Products from './components/Products';
 import React from 'react';
 import Banner2 from './components/Banner2';
 
-
 function App() {
 
   const images = carouselData.map(data => {
@@ -87,22 +86,22 @@ function App() {
   })
 
 
-  console.log(products);
-  console.log(products2);
-
-
   return (
     <div className="App">
       <div className='container'>
 
         <MainMenu />
 
-        <AliceCarousel autoPlay autoPlayInterval="3000">
+        <AliceCarousel autoPlay autoPlayInterval="3000"
+          disableButtonsControls
+          mouseTracking
+          infinite={true}
+        >
           {bannerItems}
         </AliceCarousel>
 
         <AliceCarousel autoPlay autoPlayInterval="3000"
-
+          disableButtonsControls
         >
           <div className="product-cards-container">
             {categories}
@@ -114,12 +113,21 @@ function App() {
 
 
         <div className='container'>
-          <p>Popular products</p>
-          <div>
-            <button type="button" className="btn btn-outline-light text-dark border">View More</button>
+
+          <div className="product-cards-container row d-flex justify-content-between mx-auto">
+            <p className='col-4'>Popular products</p>
+            <div className='col-6 d-flex justify-content-end'>
+              <button type="button" className="btn btn-outline-light text-dark border mx-1">Cameras</button>
+              <button type="button" className="btn btn-outline-light text-dark border mx-1">Laptops</button>
+              <button type="button" className="btn btn-outline-light text-dark border mx-1">Tablets</button>
+              <button type="button" className="btn btn-outline-light text-dark border mx-1">Mouse</button>
+            </div>
           </div>
+
+
         </div>
-        <AliceCarousel autoPlay autoPlayInterval="8000">
+        <AliceCarousel autoPlay autoPlayInterval="8000"
+          disableButtonsControls  >
           <div className="product-cards-container">
             {products}
           </div>
@@ -128,12 +136,7 @@ function App() {
           </div>
         </AliceCarousel>
 
-
-
-
         <Banner2 />
-
-
 
       </div>
     </div >
