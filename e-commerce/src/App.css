@@ -67,7 +67,7 @@
   background-color: #eda415;
   font-size: 21px;
   color: white;
-  right: 30px;
+  right: 100px;
   bottom: 0px;
   padding: 20px 30px;
   border-radius: 80px;
@@ -151,8 +151,7 @@
   flex-wrap: wrap;
 }
 
-.product-ratings {
-}
+.product-ratings {}
 
 .basket-icon {
   width: 30px;
@@ -185,4 +184,5 @@
   height: 300px;
   width: auto;
   display: flex;
+  /* overflow: scroll; */
 }

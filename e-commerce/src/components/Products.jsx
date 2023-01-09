@@ -17,6 +17,10 @@ function Products(props) {
     const onPointerLeave = () => console.log('Leave')
     const onPointerMove = (value, index) => console.log(value, index)
 
+    function addToBasket(props) {
+        console.log("added to basket");
+        console.log(props.id)
+    }
 
 
     return (
@@ -39,7 +43,8 @@ function Products(props) {
                     />
                 </div>
                 <div className="basket-icon text-center text-light">
-                    <i class="bi bi-cart3"></i>
+                    <a onClick={() => { addToBasket(props) }}><i class="bi bi-cart3"></i>
+                    </a>
                 </div>
             </div>
 

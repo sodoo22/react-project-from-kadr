@@ -3,8 +3,8 @@
 export default function Banner(props) {
 
     return (
-        <div className="row banner-container">
-            <div className="col-md-5 d-flex flex-column text-center banner-text">
+        <div className="row banner-container flex-lg-row flex-column-reverse">
+            <div className="col-lg-5 d-flex flex-column text-center banner-text">
                 <div className="text1">
                     {props.title}
                 </div>
@@ -17,12 +17,12 @@ export default function Banner(props) {
                 </div>
             </div>
 
-            <div className="col-md-1">
+            <div className="col-lg-1">
             </div>
 
-            <div className="col-md-5 promotion" style={{ position: 'relative' }}>
+            <div className="col-lg-5 promotion" style={{ position: 'relative' }}>
                 <div className="promotion-price">Only<br /> ${props.price}</div>
-                <div className="banner-img-container">
+                <div className="banner-img-container img-fluid">
                     <img src={props.imgUrl} ></img>
                 </div>
 

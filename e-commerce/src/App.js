@@ -41,6 +41,7 @@ function App() {
   const products = productsData.map(data => {
     return (
       <Products
+        id={data.id}
         title={data.title}
         imgUrl={data.imgUrl}
         price={data.price}
@@ -95,7 +96,7 @@ function App() {
 
           }}>
           <div className="product-cards-container">
-          {products}
+            {products}
           </div>
         </AliceCarousel>
 
@@ -105,7 +106,7 @@ function App() {
           {images}
         </AliceCarousel>
 
-        <Banner2/>
+        <Banner2 />
 
 
 

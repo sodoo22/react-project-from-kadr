@@ -10,7 +10,7 @@ const banner_items = [
     },
     {
         title: `MacBook Air`,
-        imgUrl: './image/macbook2.jpg',
+        imgUrl: './image/macbook5.png',
         price: 999,
         shortMessage: 'M1 chip',
         description: `New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).
