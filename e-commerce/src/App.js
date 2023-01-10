@@ -130,13 +130,13 @@ function App() {
 
         <div className='container'>
 
-          <div className="product-cards-container row d-flex justify-content-between">
-            <p className='col-4'>Popular products</p>
-            <div className='col-6 d-flex justify-content-end'>
-              <button type="button" className="btn btn-outline-light text-dark border mx-1">Cameras</button>
-              <button type="button" className="btn btn-outline-light text-dark border mx-1">Laptops</button>
-              <button type="button" className="btn btn-outline-light text-dark border mx-1">Tablets</button>
-              <button type="button" className="btn btn-outline-light text-dark border">Mouse</button>
+          <div className="product-cards-container row btn-container d-flex justify-content-between mb-4 mt-5">
+            <p className='col-3 header'>Popular products</p>
+            <div className='col-7 d-flex justify-content-end'>
+              <button type="button" className="category-btn btn btn-outline-light text-dark border mx-2">Cameras</button>
+              <button type="button" className="category-btn btn btn-outline-light text-dark border mx-2">Laptops</button>
+              <button type="button" className="category-btn btn btn-outline-light text-dark border mx-2">Tablets</button>
+              <button type="button" className="category-btn btn btn-outline-light text-dark border">Mouse</button>
             </div>
           </div>
 
@@ -156,6 +156,46 @@ function App() {
 
         <div className="product-cards-container part2">
           {productsPart2}
+        </div>
+
+        <div className="service mt-5 row">
+          <div className='free-delivery-container col-12 col-md-4'>
+            <img src="./image/content/box-tick.png" alt="" />
+            <div className="free-delivery-text-container">
+              <div className='free-delivery-txt'>
+                Free delivery
+              </div>
+              <div className='free-delivery-txt-small'>
+                on order above $50,00
+              </div>
+            </div>
+          </div>
+
+          <div className='best-quality-container col-12 col-md-4'>
+            <img src="./image/content/crown.png" alt="" />
+            <div className="best-quality-text-container">
+              <div className='best-quality-txt'>
+                Best quality
+              </div>
+              <div className='best-quality-txt-small'>
+                best quality in low price
+              </div>
+            </div>
+          </div>
+
+          <div className='warranty-container col-12 col-md-4'>
+            <img src="./image/content/shield-security.png" alt="" />
+            <div className="warranty-text-container">
+              <div className='warranty-txt'>
+                1 year warranty
+              </div>
+              <div className='warranty-txt-small'>
+                available warranty
+              </div>
+            </div>
+          </div>
+
+
         </div>
 
       </div>

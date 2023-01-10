@@ -53,6 +53,8 @@
   font-size: 43px;
   color: #1b5a7d;
   position: relative;
+  margin-bottom: 80px;
+  margin-top: 50px;
 }
 
 .banner-text {
@@ -69,6 +71,22 @@
 
 .button1 button {
   margin: 20px;
+}
+
+.header {
+  font-size: 27px;
+  font-weight: 600;
+  color: #1B5A7D;
+}
+
+.category-btn {
+  width: 139px;
+  height: 45px;
+}
+
+
+.product-cards-container button {
+  border-radius: 25px;
 }
 
 .promotion-price {
@@ -263,8 +281,8 @@
 
 
 .part2 {
-  width: 803px;
-  height: 505px;
+  width: 800px;
+  height: 500px;
   display: flex;
   flex-direction: row;
   font-size: 17px;
@@ -283,8 +301,6 @@
 .part2-img-container {
   width: 100%;
   height: 200px;
-  /* display: flex; */
-  /* justify-content: center; */
 }
 
 .part2 .product-text {
@@ -303,5 +319,45 @@
   padding: 18px 25px;
   border: none;
   margin-top: 37px;
+}
 
+
+/* Service part */
+
+.service {
+  max-width: 1328px;
+  height: 155px;
+  background-color: #E2F4FF;
+  display: flex;
+  align-items: center;
+}
+
+.free-delivery-container,
+.best-quality-container,
+.warranty-container {
+  display: flex;
+  width: 302px;
+  justify-content: center;
+  align-items: center;
+}
+
+.free-delivery-text-container,
+.best-quality-text-container,
+.warranty-text-container {
+  color: #003F62;
+  margin-left: 33px;
+}
+
+.free-delivery-txt,
+.best-quality-txt,
+.warranty-txt {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.free-delivery-txt-small,
+.best-quality-txt-small,
+.warranty-txt-small {
+  font-size: 18px;
+  font-weight: 400;
 }

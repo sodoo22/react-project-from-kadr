@@ -4,7 +4,7 @@ export default function SearchBar() {
       <div className="container">
         <div className="row">
           <div className="logo-container col-3">
-            <img src="image/logo1.png" alt="" />
+            <img src="image/content/logo1.png" alt="" />
           </div>
 
           <div className="col-4">
