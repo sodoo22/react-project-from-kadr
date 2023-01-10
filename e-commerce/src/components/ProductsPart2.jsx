@@ -4,12 +4,12 @@ import { Rating } from 'react-simple-star-rating'
 
 function Products(props) {
 
-    const [basket, setBasket] = useState(0)
     const [rating, setRating] = useState(0)
 
     // Catch Rating value
     const handleRating = (rate) => {
         setRating(rate)
+
         // other logic
     }
     // Optinal callback functions
@@ -18,15 +18,14 @@ function Products(props) {
     const onPointerMove = (value, index) => console.log(value, index)
 
     function addToBasket(props) {
-        console.log("added to basket ---->  ID = " + props.id);
-        setBasket(basket + 1)
-        console.log('Basket size = ' + basket);
+        console.log("added to basket");
+        console.log(props.id)
     }
 
 
     return (
-        <div className="product-card">
-            <div className="product-img-container ">
+        <div className="product-card part2 d-flex flex-row">
+            <div className="product-img-container part2-img-container">
                 <img src={props.imgUrl} alt="image" />
             </div>
             <div className="product-text">
@@ -43,10 +42,17 @@ function Products(props) {
                         size={15}
                     />
                 </div>
-                <div className="basket-icon text-center text-light">
-                    <a onClick={() => { addToBasket(props) }}><i class="bi bi-cart3"></i>
-                    </a>
-                </div>
+                <button type='button' className="btn-basket">
+                    <div className="btn-text">Add to cart
+                    </div>
+                    <div className="basket-icon2 text-center text-light">
+                        <a onClick={() => { addToBasket(props) }}><i class="bi bi-cart3"></i>
+                        </a>
+                    </div>
+
+                </button>
+
+
             </div>
         </div>
 

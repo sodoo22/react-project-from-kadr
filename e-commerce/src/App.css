@@ -143,6 +143,7 @@
   align-items: center;
   border-radius: 10px;
   margin: 10px;
+  font-size: 17px;
 }
 
 .product-img-container {
@@ -173,7 +174,7 @@
 
 .product-cards-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -186,7 +187,13 @@
   bottom: 0px;
   /* padding: 50px; */
   border-radius: 15px;
+  background-color: #eda415;
+}
 
+.basket-icon2 {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
   background-color: #eda415;
 }
 
@@ -216,15 +223,27 @@
   position: relative;
 }
 
-.banner2-img {
+.banner2-img-container {
+  background-image: url('../public/image/notebook-banner.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 417px;
+  max-width: 1315px;
+  border-radius: 20px;
+}
+
+.banner2-img-container img {
   height: auto;
-  max-width: 100%;
+  /* max-width: 100%; */
+  width: 1800px;
 }
 
 .banner2-text-container {
   position: absolute;
   top: 50px;
   right: 50px;
+  height: auto;
+  max-width: 100%;
 }
 
 .banner2-text {
@@ -236,5 +255,53 @@
   color: white;
   font-size: 18px;
   font-weight: 500px;
+
+}
+
+
+/* Part 2 products */
+
+
+.part2 {
+  width: 803px;
+  height: 505px;
+  display: flex;
+  flex-direction: row;
+  font-size: 17px;
+}
+
+.title {
+  color: #003F62;
+}
+
+.part2 .title {
+  font-size: 21px;
+}
+
+.price {}
+
+.part2-img-container {
+  width: 100%;
+  height: 200px;
+  /* display: flex; */
+  /* justify-content: center; */
+}
+
+.part2 .product-text {
+  margin-left: 80px;
+}
+
+.btn-basket {
+  background-color: #87BCD9;
+  border-radius: 20px;
+  width: 205px;
+  height: 60px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 25px;
+  border: none;
+  margin-top: 37px;
 
 }

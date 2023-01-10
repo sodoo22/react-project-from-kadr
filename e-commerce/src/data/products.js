@@ -111,6 +111,13 @@ const products = [
         price: 11.70,
         rating: 5
     },
+    {
+        id: 17,
+        title: 'iWatch Ultra 2040',
+        imgUrl: './image/iwatch.jpg',
+        price: 11.70,
+        rating: 5
+    },
 ]
 
 export default products
