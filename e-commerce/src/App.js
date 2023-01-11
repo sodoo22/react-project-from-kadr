@@ -13,9 +13,11 @@ import Products from './components/Products';
 import React from 'react';
 import Banner2 from './components/Banner2';
 import ProductsPart2 from './components/ProductsPart2'
+import { useState } from 'react';
+
 function App() {
 
-
+  const [show, setShow] = useState(false);
 
   const images = carouselData.map(data => {
     return (
@@ -56,6 +58,8 @@ function App() {
           imgUrl={data.imgUrl}
           price={data.price}
           rating={data.rating}
+          show={show}
+          setShow={setShow}
         />
       )
     }
@@ -70,6 +74,8 @@ function App() {
           imgUrl={data.imgUrl}
           price={data.price}
           rating={data.rating}
+          show={show}
+          setShow={setShow}
         />
       )
     }
@@ -84,6 +90,8 @@ function App() {
           imgUrl={data.imgUrl}
           price={data.price}
           rating={data.rating}
+          show={show}
+          setShow={setShow}
         />
       )
     }
@@ -100,6 +108,7 @@ function App() {
       />
     )
   })
+
 
 
   return (
@@ -194,6 +203,10 @@ function App() {
               </div>
             </div>
           </div>
+
+
+
+
 
 
         </div>
