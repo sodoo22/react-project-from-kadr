@@ -1,4 +1,27 @@
-export default function SearchBar() {
+export default function SearchBar(props) {
+
+  function handWishlist() {
+    console.log("wishlist button clicked")
+    let wishlist = document.getElementById('wishlist-container');
+    console.log(wishlist)
+    if (wishlist.style.display != "block") {
+      wishlist.style.display = "block"
+    } else {
+      wishlist.style.display = "none"
+    }
+  }
+
+  console.log(props.wishlist)
+
+  function removeFromWishlist(id) {
+
+    // props.setWishlist(props.wishlist)
+    // props.wishlist.filter(a => {
+
+    // }
+    // )
+  }
+
   return (
     <div className="searchbar-container">
       <div className="container">
@@ -30,11 +53,14 @@ export default function SearchBar() {
               Sign in
             </div>
             <div className="favorite">
-              <i className="bi bi-suit-heart">
+              <i className="bi bi-suit-heart" onClick={handWishlist}>
                 <span className="position-absolute top-10 start-95 translate-middle badge rounded-pill bg-danger">
-                  3
+
+                  {props.wishlist.length}
                 </span>
+
               </i>
+
             </div>
             <div className="basket">
               <i className="bi bi-cart">
@@ -45,7 +71,26 @@ export default function SearchBar() {
             </div>
           </div>
         </div>
+        <div id="wishlist-container">
+
+          <h3>
+            My wishlist
+          </h3>
+
+          {props.wishlist.map((myWishList, index) => {
+            return (
+              <div key={index}>
+                {myWishList.id}
+                {myWishList.title}
+                <i className="bi bi-x-circle-fill" onClick={removeFromWishlist(myWishList.id)}> </i>
+              </div>
+            )
+          })}
+
+        </div>
+
       </div>
+
     </div>
   );
 }

@@ -40,6 +40,8 @@
   position: relative;
 }
 
+
+
 .banner-container {
   font-family: "Poppins";
   font-weight: 700;
@@ -360,4 +362,26 @@
 .warranty-txt-small {
   font-size: 18px;
   font-weight: 400;
+}
+
+.wishlist-heart {
+  left: 20px;
+  top: 20px;
+  z-index: 100;
+}
+
+#wishlist-container {
+  display: block;
+  position: absolute;
+  z-index: 40;
+  background-color: white;
+  /* color: #eda415; */
+  top: 20px;
+  right: 20px;
+  display: none;
+  width: 200px;
+}
+
+.container {
+  position: relative;
 }

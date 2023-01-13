@@ -30,7 +30,7 @@ export default function MainMenu() {
                 </div>
             </div>
 
-            <SearchBar />
+
             <Navbar bg="light" className='px-5' >
 
                 {subMenus}
