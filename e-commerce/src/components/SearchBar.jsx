@@ -18,7 +18,9 @@ export default function SearchBar(props) {
   console.log(props.wishlist)
 
   function removeFromWishlist(id) {
-
+    console.log("---------------------To remove")
+    console.log("wishlist remove ID = " + id)
+    // props.setWishlist(props.wishlist.filter(a => a.id !== id))
     // props.setWishlist(props.wishlist)
     // props.wishlist.filter(a => {
 
@@ -86,10 +88,12 @@ export default function SearchBar(props) {
 
           {props.wishlist.map((myWishList, index) => {
             return (
-              <div key={index}>
-                {myWishList.id}
-                {myWishList.title}
-                <i className="bi bi-x-circle-fill" onClick={removeFromWishlist(myWishList.id)}> </i>
+              <div key={index} className="d-flex justify-content-between">
+                ID: {myWishList.id} <span className="space"></span>
+                <div className="d-flex justify-content-between">
+                  {myWishList.title} <span className="space"></span>
+                  <i className="bi bi-x-circle-fill" onClick={removeFromWishlist(myWishList.id)}> </i>
+                </div>
               </div>
             )
           })}

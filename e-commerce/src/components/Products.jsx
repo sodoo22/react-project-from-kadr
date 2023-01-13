@@ -36,14 +36,14 @@ function Products(props) {
         // setBasket(wishlist + 1)
         // console.log('Basket size = ' + wishlist);
         // console.log(props.changeColor);
+
         setIsRed(true)
 
+        // props.setChangeColor(true)
 
         let wishlistQty = props.wishlist.length;
         let isAdded = false;
         let wishlistIndex = -1;
-
-
 
         if (wishlistQty > 0) {
             props.wishlist.map((a, index) => {
@@ -57,8 +57,9 @@ function Products(props) {
             if (wishlistIndex != -1) {
                 props.wishlist.splice(wishlistIndex, 1)
                 props.setWishlist(props.wishlist.filter(a => a.id !== props.id))
-                // props.setChangeColor(false)
+
                 setIsRed(false)
+                // props.setChangeColor(false)
             }
         }
 
@@ -68,10 +69,11 @@ function Products(props) {
                 title: props.title
             }])
             // props.setChangeColor('black');
+            // props.setChangeColor(true)
+
         }
         // props.setWishlist(props.wishlist + 1)
     }
-
 
     return (
         <div className="product-card position-relative">
@@ -87,13 +89,11 @@ function Products(props) {
                     </i>
 
 
-                    {/* {props.wishlist.length > 0 ?
-                        <div id='wishSize'>
-                            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                {props.wishlist.length}
-                            </span>
-                        </div> :
-                        <p></p>} */}
+                    {/* <i className="bi bi-heart-fill" style={{ color: props.changeColor ? 'red' : 'black' }}>
+                    </i> */}
+
+
+
                 </a>
             </div>
             <div className='position-relative'>
