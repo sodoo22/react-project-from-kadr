@@ -58,11 +58,7 @@ function Products(props) {
                 title: props.title
             }])
         }
-
-
-
         // props.setWishlist(props.wishlist + 1)
-
     }
 
 
