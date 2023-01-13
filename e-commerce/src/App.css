@@ -385,3 +385,11 @@
 .container {
   position: relative;
 }
+
+#wishSize {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  /* background-color: black; */
+}

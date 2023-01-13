@@ -11,6 +11,13 @@ export default function SearchBar(props) {
     }
   }
 
+  if (props.wishlist.length > 0) {
+    document.getElementById('wishSize').style.display = 'block'
+  } else {
+    document.getElementById('wishSize').style.display = 'none'
+  }
+
+
   console.log(props.wishlist)
 
   function removeFromWishlist(id) {
@@ -54,11 +61,13 @@ export default function SearchBar(props) {
             </div>
             <div className="favorite">
               <i className="bi bi-suit-heart" onClick={handWishlist}>
-                <span className="position-absolute top-10 start-95 translate-middle badge rounded-pill bg-danger">
+                <div id='wishSize'>
+                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
 
-                  {props.wishlist.length}
-                </span>
+                    {props.wishlist.length}
 
+                  </span>
+                </div>
               </i>
 
             </div>
