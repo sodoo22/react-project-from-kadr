@@ -9,6 +9,7 @@ function Products(props) {
 
     const [basket, setBasket] = useState(0)
     const [rating, setRating] = useState(0)
+    const [isRed, setIsRed] = useState(false);
 
 
     const handleClose = () => props.setShow(!props.show);
@@ -31,24 +32,33 @@ function Products(props) {
     }
 
     function addToWishlist(props) {
-        // console.log("added to Wishlist ---->  ID = " + props.id);
+        console.log("added to Wishlist ---->  ID = " + props.id);
         // setBasket(wishlist + 1)
         // console.log('Basket size = ' + wishlist);
+        // console.log(props.changeColor);
+        setIsRed(true)
+
 
         let wishlistQty = props.wishlist.length;
         let isAdded = false;
         let wishlistIndex = -1;
 
+
+
         if (wishlistQty > 0) {
             props.wishlist.map((a, index) => {
                 if (a.id == props.id) {
                     isAdded = true;
+                    // props.setChangeColor('red');
+                    // a.changeColor = true;
                     wishlistIndex = index;
                 }
             })
             if (wishlistIndex != -1) {
                 props.wishlist.splice(wishlistIndex, 1)
                 props.setWishlist(props.wishlist.filter(a => a.id !== props.id))
+                // props.setChangeColor(false)
+                setIsRed(false)
             }
         }
 
@@ -57,6 +67,7 @@ function Products(props) {
                 id: props.id,
                 title: props.title
             }])
+            // props.setChangeColor('black');
         }
         // props.setWishlist(props.wishlist + 1)
     }
@@ -64,8 +75,26 @@ function Products(props) {
 
     return (
         <div className="product-card position-relative">
-            <div className='wishlist-heart d-flex justify-content-end position-absolute fs-3'>
-                <a onClick={() => { addToWishlist(props) }}><i className="bi bi-heart-fill"></i></a>
+            <div className='wishlist-heart d-flex justify-content-end  position-absolute fs-3'>
+                <a onClick={() => { addToWishlist(props) }}>
+
+                    {/* <i className="bi bi-heart-fill" style={{ color: props.changeColor }}></i> */}
+
+
+
+
+                    <i className="bi bi-heart-fill" style={{ color: isRed ? 'red' : 'black' }}>
+                    </i>
+
+
+                    {/* {props.wishlist.length > 0 ?
+                        <div id='wishSize'>
+                            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                {props.wishlist.length}
+                            </span>
+                        </div> :
+                        <p></p>} */}
+                </a>
             </div>
             <div className='position-relative'>
 

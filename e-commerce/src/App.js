@@ -22,6 +22,7 @@ import MyModalComponent from './components/MyModalComponent';
 function App() {
 
   const [wishlist, setWishlist] = useState([])
+  const [changeColor, setChangeColor] = useState('black')
 
 
   const [show, setShow] = useState(false);
@@ -69,6 +70,9 @@ function App() {
           setShow={setShow}
           wishlist={wishlist}
           setWishlist={setWishlist}
+          changeColor={changeColor}
+          setChangeColor={setChangeColor}
+
         />
       )
     }
@@ -87,6 +91,8 @@ function App() {
           setShow={setShow}
           wishlist={wishlist}
           setWishlist={setWishlist}
+          changeColor={changeColor}
+          setChangeColor={setChangeColor}
         />
       )
     }
