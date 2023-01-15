@@ -18,6 +18,7 @@ import SearchBar from './components/SearchBar';
 
 
 import MyModalComponent from './components/MyModalComponent';
+import CallService from './components/CallService';
 
 function App() {
 
@@ -176,14 +177,18 @@ function App() {
 
     <div className="App">
 
-      <div className='container'>
+      <div id='product-container' className='container'>
+
+        <CallService />
+
+
+        <MainMenu />
+
 
         <SearchBar
 
           wishlist={wishlist}
           setWishlist={setWishlist} />
-
-        <MainMenu />
 
         <AliceCarousel autoPlay autoPlayInterval="3000"
           disableButtonsControls

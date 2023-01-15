@@ -1,7 +1,17 @@
+#product-container {
+  position: relative;
+}
+
+#banner {
+  margin-top: 250px;
+}
+
+.callService {
+  /* margin-top: 200px; */
+}
 .callService {
   display: flex;
   justify-content: space-between;
-  margin: 20px;
 }
 
 .callService div {
@@ -10,11 +20,35 @@
 }
 
 .searchbar-container {
-  background-color: #003f62;
-  height: 100px;
+}
+
+.searchbar-container .container {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100px;
+  background-color: #003f62;
+  position: fixed;
+  width: 100%;
+  z-index: 13;
+  top: 60px;
+}
+
+#callService-container {
+  position: fixed;
+  width: 100%;
+  z-index: 12;
+  top: 0px;
+  background-color: white;
+  padding: 20px;
+  max-width: 1320px;
+}
+
+#mainMenu-container {
+  position: fixed;
+  width: 100%;
+  z-index: 11;
+  top: 160px;
 }
 
 .logo-container {
@@ -40,8 +74,6 @@
   position: relative;
 }
 
-
-
 .banner-container {
   font-family: "Poppins";
   font-weight: 700;
@@ -65,7 +97,6 @@
   justify-content: center;
 }
 
-
 .banner-container .text-short {
   font-size: 25px;
   font-weight: 400;
@@ -78,14 +109,13 @@
 .header {
   font-size: 27px;
   font-weight: 600;
-  color: #1B5A7D;
+  color: #1b5a7d;
 }
 
 .category-btn {
   width: 139px;
   height: 45px;
 }
-
 
 .product-cards-container button {
   border-radius: 25px;
@@ -134,7 +164,7 @@
 
 .category-text {
   width: 70%;
-  color: #1B5A7D;
+  color: #1b5a7d;
 }
 
 .right.carousel-control,
@@ -149,9 +179,8 @@
 
 .category-text .item {
   /* padding-bottom: 15px; */
-  padding-top: 10px
+  padding-top: 10px;
 }
-
 
 .product-card {
   padding: 10px;
@@ -198,7 +227,6 @@
   flex-wrap: wrap;
 }
 
-
 .basket-icon {
   width: 30px;
   height: 30px;
@@ -244,7 +272,7 @@
 }
 
 .banner2-img-container {
-  background-image: url('../public/image/notebook-banner.png');
+  background-image: url("../public/image/notebook-banner.png");
   background-repeat: no-repeat;
   background-position: center;
   height: 417px;
@@ -267,7 +295,7 @@
 }
 
 .banner2-text {
-  color: #2E8FC5;
+  color: #2e8fc5;
   font-size: 41px;
 }
 
@@ -275,12 +303,9 @@
   color: white;
   font-size: 18px;
   font-weight: 500px;
-
 }
 
-
 /* Part 2 products */
-
 
 .part2 {
   width: 800px;
@@ -291,14 +316,15 @@
 }
 
 .title {
-  color: #003F62;
+  color: #003f62;
 }
 
 .part2 .title {
   font-size: 21px;
 }
 
-.price {}
+.price {
+}
 
 .part2-img-container {
   width: 100%;
@@ -310,7 +336,7 @@
 }
 
 .btn-basket {
-  background-color: #87BCD9;
+  background-color: #87bcd9;
   border-radius: 20px;
   width: 205px;
   height: 60px;
@@ -323,13 +349,12 @@
   margin-top: 37px;
 }
 
-
 /* Service part */
 
 .service {
   max-width: 1328px;
   height: 155px;
-  background-color: #E2F4FF;
+  background-color: #e2f4ff;
   display: flex;
   align-items: center;
 }
@@ -346,7 +371,7 @@
 .free-delivery-text-container,
 .best-quality-text-container,
 .warranty-text-container {
-  color: #003F62;
+  color: #003f62;
   margin-left: 33px;
 }
 
@@ -396,5 +421,4 @@
   /* background-color: black; */
   /* width: 400px; */
   /* padding: 50px; */
-
 }

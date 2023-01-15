@@ -1,26 +1,23 @@
 export default function SearchBar(props) {
-
   function handWishlist() {
-    console.log("wishlist button clicked")
-    let wishlist = document.getElementById('wishlist-container');
-    console.log(wishlist)
+    console.log("wishlist button clicked");
+    let wishlist = document.getElementById("wishlist-container");
+    console.log(wishlist);
     if (wishlist.style.display != "block") {
-      wishlist.style.display = "block"
+      wishlist.style.display = "block";
     } else {
-      wishlist.style.display = "none"
+      wishlist.style.display = "none";
     }
   }
 
-
   console.log(props.wishlist.length);
 
-
-  console.log(props.wishlist)
+  console.log(props.wishlist);
 
   function removeFromWishlist(id) {
-    console.log("---------------------To remove")
-    console.log("wishlist remove ID = " + id)
-    props.setWishlist(props.wishlist.filter(a => a.id !== id))
+    console.log("---------------------To remove");
+    console.log("wishlist remove ID = " + id);
+    props.setWishlist(props.wishlist.filter((a) => a.id !== id));
     // props.setWishlist(props.wishlist)
     // props.wishlist.filter(a => {
 
@@ -60,16 +57,16 @@ export default function SearchBar(props) {
             </div>
             <div className="favorite">
               <i className="bi bi-suit-heart" onClick={handWishlist}>
-
-                {props.wishlist.length > 0 ?
-                  <div id='wishSize'>
+                {props.wishlist.length > 0 ? (
+                  <div id="wishSize">
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                       {props.wishlist.length}
                     </span>
-                  </div> :
-                  <p></p>}
+                  </div>
+                ) : (
+                  <p></p>
+                )}
               </i>
-
             </div>
             <div className="basket">
               <i className="bi bi-cart">
@@ -81,10 +78,7 @@ export default function SearchBar(props) {
           </div>
         </div>
         <div id="wishlist-container">
-
-          <h3>
-            My wishlist
-          </h3>
+          <h3>My wishlist</h3>
 
           {props.wishlist.map((myWishList, index) => {
             return (
@@ -92,16 +86,15 @@ export default function SearchBar(props) {
                 ID: {myWishList.id} <span className="space"></span>
                 <div className="d-flex justify-content-between">
                   {myWishList.title} <span className="space"></span>
-                  <a onClick={() => removeFromWishlist(myWishList.id)}><i className="bi bi-x-circle-fill"> </i></a>
+                  <a onClick={() => removeFromWishlist(myWishList.id)}>
+                    <i className="bi bi-x-circle-fill"> </i>
+                  </a>
                 </div>
               </div>
-            )
+            );
           })}
-
         </div>
-
       </div>
-
     </div>
   );
 }
