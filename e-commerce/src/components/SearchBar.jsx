@@ -1,12 +1,24 @@
+import { useState } from "react";
+
 export default function SearchBar(props) {
+  const [hidewish, setHidewish] = useState(false);
+  // let wishlist = document.getElementById("wishlist-container");
+
+  // if (props.wishlist.length < 1) {
+  //   wishlist.style.display = "none";
+  // }
+
   function handWishlist() {
     console.log("wishlist button clicked");
-    let wishlist = document.getElementById("wishlist-container");
-    console.log(wishlist);
-    if (wishlist.style.display != "block") {
-      wishlist.style.display = "block";
-    } else {
-      wishlist.style.display = "none";
+    if (props.wishlist.length > 0) {
+      let wishlist = document.getElementById("wishlist-container");
+      console.log("wishlist size" + wishlist);
+
+      if (wishlist.style.display != "block") {
+        wishlist.style.display = "block";
+      } else {
+        wishlist.style.display = "none";
+      }
     }
   }
 
@@ -18,6 +30,9 @@ export default function SearchBar(props) {
     console.log("---------------------To remove");
     console.log("wishlist remove ID = " + id);
     props.setWishlist(props.wishlist.filter((a) => a.id !== id));
+    console.log("props.changeColor = " + props.changeColor);
+
+    props.setChangeColor(true);
     // props.setWishlist(props.wishlist)
     // props.wishlist.filter(a => {
 
@@ -28,12 +43,12 @@ export default function SearchBar(props) {
   return (
     <div className="searchbar-container">
       <div className="container">
-        <div className="row">
-          <div className="logo-container col-3">
+        <div className="row xx">
+          <div className="logo-container col-6 col-md-3">
             <img src="image/content/logo1.png" alt="" />
           </div>
 
-          <div className="col-4">
+          <div className="col-6 col-md-4 d-none d-md-block">
             <div className="input-group">
               <input
                 type="search"
@@ -48,8 +63,8 @@ export default function SearchBar(props) {
             </div>
           </div>
 
-          <div className="col-2"></div>
-          <div className="col-3 signin-container">
+          <div className="col-sm-1"></div>
+          <div className="col-12 col-sm-5 col-md-4 justify-content-center signin-container">
             <div className="signin">
               <i className="bi bi-person"></i>
               <span className="space"> </span>
@@ -77,23 +92,28 @@ export default function SearchBar(props) {
             </div>
           </div>
         </div>
-        <div id="wishlist-container">
-          <h3>My wishlist</h3>
 
-          {props.wishlist.map((myWishList, index) => {
-            return (
-              <div key={index} className="d-flex justify-content-between">
-                ID: {myWishList.id} <span className="space"></span>
-                <div className="d-flex justify-content-between">
-                  {myWishList.title} <span className="space"></span>
-                  <a onClick={() => removeFromWishlist(myWishList.id)}>
-                    <i className="bi bi-x-circle-fill"> </i>
-                  </a>
+        {props.wishlist.length > 0 ? (
+          <div id="wishlist-container">
+            <h3>My wishlist</h3>
+
+            {props.wishlist.map((myWishList, index) => {
+              return (
+                <div key={index} className="d-flex justify-content-between">
+                  ID: {myWishList.id} <span className="space"></span>
+                  <div className="d-flex justify-content-between">
+                    {myWishList.title} <span className="space"></span>
+                    <a onClick={() => removeFromWishlist(myWishList.id)}>
+                      <i className="bi bi-x-circle-fill"> </i>
+                    </a>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div></div>
+        )}
       </div>
     </div>
   );

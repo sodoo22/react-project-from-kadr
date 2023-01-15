@@ -19,13 +19,15 @@
   margin-left: 20px;
 }
 
-.searchbar-container {
+.input-group {
+  /* width: 150px; */
 }
 
 .searchbar-container .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  padding-top: 25px;
   height: 100px;
   background-color: #003f62;
   position: fixed;
@@ -49,6 +51,10 @@
   width: 100%;
   z-index: 11;
   top: 160px;
+  /* width: auto; */
+}
+
+Navbar {
 }
 
 .logo-container {

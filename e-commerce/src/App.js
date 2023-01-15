@@ -23,7 +23,9 @@ import CallService from './components/CallService';
 function App() {
 
   const [wishlist, setWishlist] = useState([])
-  // const [changeColor, setChangeColor] = useState(false)
+  const [changeColor, setChangeColor] = useState(false)
+  // const [isRed, setIsRed] = useState(false);
+
 
 
   const [show, setShow] = useState(false);
@@ -71,8 +73,8 @@ function App() {
           setShow={setShow}
           wishlist={wishlist}
           setWishlist={setWishlist}
-        // changeColor={changeColor}
-        // setChangeColor={setChangeColor}
+          changeColor={changeColor}
+          setChangeColor={setChangeColor}
 
         />
       )
@@ -92,8 +94,8 @@ function App() {
           setShow={setShow}
           wishlist={wishlist}
           setWishlist={setWishlist}
-        // changeColor={changeColor}
-        // setChangeColor={setChangeColor}
+          changeColor={changeColor}
+          setChangeColor={setChangeColor}
         />
       )
     }
@@ -188,7 +190,10 @@ function App() {
         <SearchBar
 
           wishlist={wishlist}
-          setWishlist={setWishlist} />
+          setWishlist={setWishlist}
+          changeColor={changeColor}
+          setChangeColor={setChangeColor}
+        />
 
         <AliceCarousel autoPlay autoPlayInterval="3000"
           disableButtonsControls
