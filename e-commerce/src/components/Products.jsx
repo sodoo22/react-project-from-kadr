@@ -70,7 +70,7 @@ function Products(props) {
     let result = false; // анхны утгыг False гэж зарлаж байна. Олдоогүй үед автоматаар FALSE буцна.
     props.wishlist.map((a) => {
       if (a.id == id) {
-        result = true; // олдчихлоо Одоо утгаа TRUE болгоё. 
+        result = true; // олдчихвол утгаа TRUE болгоё. 
       }
     })
     return result // утгаа буцаая

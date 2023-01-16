@@ -6,18 +6,8 @@
   margin-top: 250px;
 }
 
-.callService {
-  /* margin-top: 200px; */
-}
-.callService {
-  display: flex;
-  justify-content: space-between;
-}
 
-.callService div {
-  display: flex;
-  margin-left: 20px;
-}
+
 
 .input-group {
   /* width: 150px; */
@@ -36,14 +26,27 @@
   top: 60px;
 }
 
-#callService-container {
+
+/* call service formatting */
+#callService-container .container {
+  display: flex;
+  justify-content: space-between;
   position: fixed;
   width: 100%;
   z-index: 12;
   top: 0px;
   background-color: white;
   padding: 20px;
-  max-width: 1320px;
+  /* max-width: 1200px; */
+}
+
+.callService div {
+  display: flex;
+
+}
+
+.callService i {
+  margin-left: 20px;
 }
 
 #mainMenu-container {
@@ -54,8 +57,7 @@
   /* width: auto; */
 }
 
-Navbar {
-}
+Navbar {}
 
 .logo-container {
   width: 140px;
@@ -329,8 +331,7 @@ Navbar {
   font-size: 21px;
 }
 
-.price {
-}
+.price {}
 
 .part2-img-container {
   width: 100%;

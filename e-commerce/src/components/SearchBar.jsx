@@ -32,7 +32,7 @@ export default function SearchBar(props) {
     <div className="searchbar-container">
       <div className="container">
         <div className="row xx">
-          <div className="logo-container col-6 col-md-3">
+          <div className="logo-container col-4 col-md-3">
             <img src="image/content/logo1.png" alt="" />
           </div>
 
