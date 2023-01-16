@@ -23,8 +23,8 @@ import CallService from './components/CallService';
 function App() {
 
   const [wishlist, setWishlist] = useState([])
-  const [changeColor, setChangeColor] = useState(false)
-  const [productColors, setProductColors] = useState([])
+  // const [changeColor, setChangeColor] = useState(false)
+  // const [productColors, setProductColors] = useState([])
   // const [isRed, setIsRed] = useState(false);
 
 
@@ -74,10 +74,10 @@ function App() {
           setShow={setShow}
           wishlist={wishlist}
           setWishlist={setWishlist}
-          changeColor={changeColor}
-          setChangeColor={setChangeColor}
-          productColors={productColors}
-          setProductColors={setProductColors}
+        // changeColor={changeColor}
+        // setChangeColor={setChangeColor}
+        // productColors={productColors}
+        // setProductColors={setProductColors}
         />
       )
     }
@@ -96,10 +96,10 @@ function App() {
           setShow={setShow}
           wishlist={wishlist}
           setWishlist={setWishlist}
-          changeColor={changeColor}
-          setChangeColor={setChangeColor}
-          productColors={productColors}
-          setProductColors={setProductColors}
+        // changeColor={changeColor}
+        // setChangeColor={setChangeColor}
+        // productColors={productColors}
+        // setProductColors={setProductColors}
         />
       )
     }
@@ -194,10 +194,10 @@ function App() {
         <SearchBar
           wishlist={wishlist}
           setWishlist={setWishlist}
-          changeColor={changeColor}
-          setChangeColor={setChangeColor}
-          productColors={productColors}
-          setProductColors={setProductColors}
+        // changeColor={changeColor}
+        // setChangeColor={setChangeColor}
+        // productColors={productColors}
+        // setProductColors={setProductColors}
         />
 
         <AliceCarousel autoPlay autoPlayInterval="3000"

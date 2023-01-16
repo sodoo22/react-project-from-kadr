@@ -6,7 +6,6 @@ import Modal from "react-bootstrap/Modal";
 function Products(props) {
   const [basket, setBasket] = useState(0);
   const [rating, setRating] = useState(0);
-  const [isRed, setIsRed] = useState(props.changeColor);
 
   const handleClose = () => props.setShow(!props.show);
   const handleShow = () => props.setShow(!props.show);
@@ -16,10 +15,6 @@ function Products(props) {
     setRating(rate);
     // other logic
   };
-  // Optinal callback functions
-  // const onPointerEnter = () => console.log('Enter')
-  // const onPointerLeave = () => console.log('Leave')
-  // const onPointerMove = (value, index) => console.log(value, index)
 
   function addToBasket(props) {
     console.log("added to basket ---->  ID = " + props.id);
@@ -28,50 +23,33 @@ function Products(props) {
   }
 
   function addToWishlist(props) {
+    // Wishlist-д нэмэх гэж оролдож буй бүтээгдэхүүний ID-г хэвлэж шалгаж байна.
     console.log("added to Wishlist ---->  ID = " + props.id);
-    // setBasket(wishlist + 1)
-    // console.log('Basket size = ' + wishlist);
-    console.log("is RED = " + isRed);
-    console.log("props.changeColor = " + props.changeColor);
 
-    if (isRed) {
-      setIsRed(false);
-      props.setChangeColor(false);
-      const me = {
-        id: props.id,
-        colorState: false
-      }
-      props.setProductColors([...props.productColors, me])
-    } else {
-      setIsRed(true);
-      props.setChangeColor(true);
-    }
+    let wishlistQty = props.wishlist.length; // Wishlist-ийн хэмжээг хадгалах
 
-    let wishlistQty = props.wishlist.length;
+    // Уг бүтээгдэхүүн Wishlist-д нэмсэн нэмээгүй эсэхийг шалгах Variable зарлаж байна.
+    // анхны default утгыг False гээд авлаа.
     let isAdded = false;
+
+    // wishlist-д хэрэв аль хэдийн нэмсэн бол Array дахь индексийг нь хадгална.
+    // анхны харгалзах утгыг -1 гэж авлаа. Учир нь Array index хэзээ ч -1 байх боломжгүй.
     let wishlistIndex = -1;
 
-    if (wishlistQty > 0) {
+    if (wishlistQty > 0) { // Wishlist -д ямар нэгэн бараа байх үед уг кодыг Execute хийнэ. 
       props.wishlist.map((a, index) => {
         if (a.id == props.id) {
-          isAdded = true;
-          // props.setChangeColor('red');
-          // a.changeColor = true;
-          wishlistIndex = index;
+          isAdded = true; // Уг бараа нь Wishlist-д олдвол True болгож өөрчлөнө
         }
       });
-      if (wishlistIndex != -1) {
-        // props.wishlist.splice(wishlistIndex, 1);
+      if (isAdded) {
+        // Хадгалсан байвал устгана. Учир нь энэ бараан дээр 2 дахь удаагаа дарж байгаа үед Устгах зорилгоор дарсан байх гэж үзнэ.
         props.setWishlist(props.wishlist.filter((a) => a.id !== props.id));
-
-        setIsRed(false);
-        props.setChangeColor(false);
+        // filter-ээр хайгаад уг ID-наас бусад барааг шүүж аваад SetWishlist state ашиглан хадгална.
       }
     }
 
-
-
-    if (isAdded == false) {
+    if (isAdded == false) { // хэрэв уг барааг нэмээгүй байсан бол Array-руу нэмнэ.
       props.setWishlist([
         ...props.wishlist,
         {
@@ -79,47 +57,25 @@ function Products(props) {
           title: props.title
         },
       ]);
-      // props.setChangeColor('black');
-      // props.setChangeColor(true)
     }
-    // props.setWishlist(props.wishlist + 1)
   }
 
-  console.log("in Products");
-  console.log(props.wishlist.length);
-  console.log(props.wishlist);
+
+  // Уг функц нь өгөдсөн ID бүхий бүтээгдэхүүн байгаа эсэхийг Wishlist array-гаас шалгана.
+  // Буцаах утга нь Boolean (true or false)
+  // Олдсон үед --> Тrue
+  // Олдоогүй үед --> False
 
   function inWishlist(id) {
-    let result = false;
+    let result = false; // анхны утгыг False гэж зарлаж байна. Олдоогүй үед автоматаар FALSE буцна.
     props.wishlist.map((a) => {
       if (a.id == id) {
-        console.log("props.id " + id + " ( in Wishlist)")
-        result = true;
+        result = true; // олдчихлоо Одоо утгаа TRUE болгоё. 
       }
-      // else {
-      //   console.log("id = " + id + " (Not in wishlist)")
-      //   result = false;
-      // }
     })
-    console.log("id = " + id + " --> result = " + result)
-    return result
+    return result // утгаа буцаая
   }
 
-  // const found = props.wishlist.filter((a) => {
-  //   if (a.id == props.id) {
-  //     console.log("Found")
-  //     console.log("props.id " + props.id)
-  //     return a
-  //   }
-  // })
-
-  // if (found.length > 0) {
-  //   console.log("found")
-  //   // setIsRed(true)
-  // } else {
-  //   console.log("Not found")
-  //   // setIsRed(false)
-  // }
 
   return (
     <div className="product-card position-relative">
@@ -129,25 +85,20 @@ function Products(props) {
             addToWishlist(props);
           }}
         >
-          {/* <i className="bi bi-heart-fill" style={{ color: props.changeColor }}></i> */}
 
+          {/* HEART COLOR CHANGE */}
+          {/* 
+inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхүүн Wishlist array-д байгаа эсэхийг
+шалгана. 
+Байвал True утга буцааж RED өнгөөр хэвлэнэ. 
+Байхгүй үед False утга буцааснаар BLack өнгөөр хэвлэнэ. 
+
+*/}
           <i
             className="bi bi-heart-fill"
             style={{ color: inWishlist(props.id) ? "red" : "black" }}
           ></i>
 
-
-          {/* <i
-            className="bi bi-heart-fill"
-            style={{ color: isRed ? "red" : "black" }}
-          ></i> */}
-
-
-
-          {/* <i
-            className="bi bi-heart-fill"
-            style={{ color: props.changeColor ? "red" : "black" }}
-          ></i> */}
         </a>
       </div>
       <div className="position-relative">

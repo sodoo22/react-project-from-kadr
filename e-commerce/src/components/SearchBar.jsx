@@ -2,11 +2,6 @@ import { useState } from "react";
 
 export default function SearchBar(props) {
   const [hidewish, setHidewish] = useState(false);
-  // let wishlist = document.getElementById("wishlist-container");
-
-  // if (props.wishlist.length < 1) {
-  //   wishlist.style.display = "none";
-  // }
 
   function handWishlist() {
     console.log("wishlist button clicked");
@@ -28,22 +23,9 @@ export default function SearchBar(props) {
   console.log(props.wishlist);
 
   function removeFromWishlist(id, props) {
-    console.log("---------------------To remove");
+    console.log("--------To remove from wishlist ");
     console.log("wishlist remove ID = " + id);
     props.setWishlist(props.wishlist.filter((a) => a.id !== id));
-    console.log("props.changeColor = " + props.changeColor);
-    console.log(props.productColors)
-    if (props.changeColor == true) {
-      props.setChangeColor(false);
-    } else {
-      props.setChangeColor(true);
-    }
-    // props.setChangeColor(() => { props.setChangeColor(false) });
-    // props.setWishlist(props.wishlist)
-    // props.wishlist.filter(a => {
-
-    // }
-    // )
   }
 
   return (
