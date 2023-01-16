@@ -69,27 +69,14 @@ function Products(props) {
       }
     }
 
-    const found = props.wishlist.filter((a) => {
-      if (a.id == props.id) {
-        console.log("Found")
-        console.log("props.id " + props.id)
-        return a
-      }
-    })
 
-    if (found.length > 0) {
-      setIsRed(true)
-    } else {
-      setIsRed(false)
-    }
 
     if (isAdded == false) {
       props.setWishlist([
         ...props.wishlist,
         {
           id: props.id,
-          title: props.title,
-          isRed: props.changeColor
+          title: props.title
         },
       ]);
       // props.setChangeColor('black');
@@ -97,6 +84,42 @@ function Products(props) {
     }
     // props.setWishlist(props.wishlist + 1)
   }
+
+  console.log("in Products");
+  console.log(props.wishlist.length);
+  console.log(props.wishlist);
+
+  function inWishlist(id) {
+    let result = false;
+    props.wishlist.map((a) => {
+      if (a.id == id) {
+        console.log("props.id " + id + " ( in Wishlist)")
+        result = true;
+      }
+      // else {
+      //   console.log("id = " + id + " (Not in wishlist)")
+      //   result = false;
+      // }
+    })
+    console.log("id = " + id + " --> result = " + result)
+    return result
+  }
+
+  // const found = props.wishlist.filter((a) => {
+  //   if (a.id == props.id) {
+  //     console.log("Found")
+  //     console.log("props.id " + props.id)
+  //     return a
+  //   }
+  // })
+
+  // if (found.length > 0) {
+  //   console.log("found")
+  //   // setIsRed(true)
+  // } else {
+  //   console.log("Not found")
+  //   // setIsRed(false)
+  // }
 
   return (
     <div className="product-card position-relative">
@@ -108,11 +131,18 @@ function Products(props) {
         >
           {/* <i className="bi bi-heart-fill" style={{ color: props.changeColor }}></i> */}
 
-
           <i
             className="bi bi-heart-fill"
-            style={{ color: isRed ? "red" : "black" }}
+            style={{ color: inWishlist(props.id) ? "red" : "black" }}
           ></i>
+
+
+          {/* <i
+            className="bi bi-heart-fill"
+            style={{ color: isRed ? "red" : "black" }}
+          ></i> */}
+
+
 
           {/* <i
             className="bi bi-heart-fill"

@@ -23,17 +23,16 @@ export default function SearchBar(props) {
     }
   }
 
+  console.log("in Searchbar");
   console.log(props.wishlist.length);
-
   console.log(props.wishlist);
 
-  function removeFromWishlist(id) {
+  function removeFromWishlist(id, props) {
     console.log("---------------------To remove");
     console.log("wishlist remove ID = " + id);
     props.setWishlist(props.wishlist.filter((a) => a.id !== id));
     console.log("props.changeColor = " + props.changeColor);
     console.log(props.productColors)
-    // console.log("props id = " + id)
     if (props.changeColor == true) {
       props.setChangeColor(false);
     } else {
@@ -110,7 +109,7 @@ export default function SearchBar(props) {
                   ID: {myWishList.id} <span className="space"></span>
                   <div className="d-flex justify-content-between">
                     {myWishList.title} <span className="space"></span>
-                    <a onClick={() => removeFromWishlist(myWishList.id)}>
+                    <a onClick={() => removeFromWishlist(myWishList.id, props)}>
                       <i className="bi bi-x-circle-fill"> </i>
                     </a>
                   </div>
