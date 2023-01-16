@@ -26,6 +26,15 @@
   top: 60px;
 }
 
+.close-btn {
+  position: absolute;
+  right: 0;
+  top: -10px;
+  color: red;
+  font-size: 25px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
 
 /* call service formatting */
 #callService-container .container {

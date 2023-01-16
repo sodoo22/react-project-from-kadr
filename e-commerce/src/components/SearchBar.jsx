@@ -28,6 +28,13 @@ export default function SearchBar(props) {
     props.setWishlist(props.wishlist.filter((a) => a.id !== id));
   }
 
+  function closeWishlist() {
+    if (props.wishlist.length > 0) {
+      let wishlist = document.getElementById("wishlist-container");
+      wishlist.style.display = "none";
+    }
+  }
+
   return (
     <div className="searchbar-container">
       <div className="container">
@@ -83,6 +90,7 @@ export default function SearchBar(props) {
 
         {props.wishlist.length > 0 ? (
           <div id="wishlist-container">
+            <a onClick={() => closeWishlist()}><i className="bi bi-x-circle-fill close-btn"> </i></a>
             <h3>My wishlist</h3>
 
             {props.wishlist.map((myWishList, index) => {
