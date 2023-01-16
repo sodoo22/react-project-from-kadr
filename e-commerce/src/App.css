@@ -255,6 +255,16 @@ Navbar {}
   background-color: #eda415;
 }
 
+.basket-icon-green {
+  width: 60px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+  border-radius: 15px;
+  background-color: green;
+}
+
 .basket-icon2 {
   width: 30px;
   height: 30px;
@@ -426,6 +436,21 @@ Navbar {}
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+#basket-container {
+  display: block;
+  position: absolute;
+  z-index: 40;
+  background-color: white;
+  /* color: #eda415; */
+  top: 20px;
+  right: 20px;
+  display: none;
+  width: 300px;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
 .container {
   position: relative;
 }
@@ -437,4 +462,27 @@ Navbar {}
   /* background-color: black; */
   /* width: 400px; */
   /* padding: 50px; */
+}
+
+#basketSize {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  /* background-color: black; */
+  /* width: 400px; */
+  /* padding: 50px; */
+}
+
+
+.signup-container form {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  justify-content: flex-start;
+  margin: 0 auto;
+}
+
+.signup-container .form-label {
+  display: flex;
+  justify-content: start;
 }

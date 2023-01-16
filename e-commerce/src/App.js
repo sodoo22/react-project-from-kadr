@@ -15,14 +15,17 @@ import Banner2 from './components/Banner2';
 import ProductsPart2 from './components/ProductsPart2'
 import { useState } from 'react';
 import SearchBar from './components/SearchBar';
-
-
-import MyModalComponent from './components/MyModalComponent';
 import CallService from './components/CallService';
+
+import { Link, Routes, Route } from 'react-router-dom'
+import Signup from './components/Signup';
+import NotFound from './components/NotFound';
+import Home from './components/Home'
 
 function App() {
 
   const [wishlist, setWishlist] = useState([])
+  const [basket, setBasket] = useState([])
   const [show, setShow] = useState(false);
 
   const images = carouselData.map(data => {
@@ -68,6 +71,8 @@ function App() {
           setShow={setShow}
           wishlist={wishlist}
           setWishlist={setWishlist}
+          basket={basket}
+          setBasket={setBasket}
         />
       )
     }
@@ -86,6 +91,8 @@ function App() {
           setShow={setShow}
           wishlist={wishlist}
           setWishlist={setWishlist}
+          basket={basket}
+          setBasket={setBasket}
         />
       )
     }
@@ -120,50 +127,8 @@ function App() {
   })
 
 
-  const modalData = {
-    title: 'My Title From Parent',
-    body: ['Apple', 'Ipple', 'Opple', 'Upple', 'Epple']
-  };
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  function openFromParent() {
-    setIsOpen(true);
-  }
-
-  function handleCloseModal(event, data) {
-    console.log(event, data);
-    setIsOpen(false);
-  }
-
-  function handleAfterOpen(event, data) {
-    console.log(event, data);
-  }
-
-
 
   return (
-
-
-    // <div>
-    //   <h1>
-    //     React-Modal Example - Pass Data and Open from Parent Functional
-    //     Component
-    //   </h1>
-
-    //   <MyModalComponent
-    //     dynData={modalData}
-    //     IsModalOpened={modalIsOpen}
-    //     onCloseModal={handleCloseModal}
-    //     onAfterOpen={handleAfterOpen}
-    //   />
-    //   <button onClick={openFromParent}>Open Modal</button>
-
-    //   <p>
-    //     <a href="" target="_blank">
-    //       Complete Tutorial
-    //     </a>
-    //   </p>
-    // </div>
 
 
 
@@ -175,10 +140,16 @@ function App() {
 
         <MainMenu />
 
+
+
+
         <SearchBar
           wishlist={wishlist}
           setWishlist={setWishlist}
+          basket={basket}
+          setBasket={setBasket}
         />
+
 
         <AliceCarousel autoPlay autoPlayInterval="3000"
           disableButtonsControls
@@ -187,6 +158,16 @@ function App() {
         >
           {bannerItems}
         </AliceCarousel>
+
+        <div id='navbar'>
+          <Link to={'/'}> Home</Link >
+          <Link to={"/signup"}> Signup</Link>
+        </div>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/*" element={<NotFound />}></Route>
+        </Routes>
 
         <AliceCarousel autoPlay autoPlayInterval="3000"
           disableButtonsControls
@@ -266,11 +247,6 @@ function App() {
               </div>
             </div>
           </div>
-
-
-
-
-
 
         </div>
 

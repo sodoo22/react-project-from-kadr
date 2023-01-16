@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 function Products(props) {
-  const [basket, setBasket] = useState(0);
+  // const [basket, setBasket] = useState(0);
   const [rating, setRating] = useState(0);
 
   const handleClose = () => props.setShow(!props.show);
@@ -16,12 +16,49 @@ function Products(props) {
     // other logic
   };
 
-  function addToBasket(props) {
-    console.log("added to basket ---->  ID = " + props.id);
-    setBasket(basket + 1);
-    console.log("Basket size = " + basket);
+  //  Сагсанд хийх function
+  function basket(props) {
+    console.log("added to Basket ---->  ID = " + props.id);
+    let basketQty = props.basket.length;
+    let isAdded = false;
+
+    if (basketQty > 0) {
+      props.basket.map((a, index) => {
+        if (a.id == props.id) {
+          isAdded = true;
+        }
+      });
+      if (isAdded) {
+        props.setBasket(props.basket.filter((a) => a.id !== props.id));
+      }
+    }
+
+    if (isAdded == false) {
+      props.setBasket([
+        ...props.basket,
+        {
+          id: props.id,
+          title: props.title
+        },
+      ]);
+    }
   }
 
+  function inBasket(id) {
+    let result = false;
+    props.basket.map((a) => {
+      if (a.id == id) {
+        result = true;
+      }
+    })
+    return result // утгаа буцаая
+  }
+
+
+
+
+
+  // Wishlist-д нэмэх function
   function addToWishlist(props) {
     // Wishlist-д нэмэх гэж оролдож буй бүтээгдэхүүний ID-г хэвлэж шалгаж байна.
     console.log("added to Wishlist ---->  ID = " + props.id);
@@ -31,10 +68,6 @@ function Products(props) {
     // Уг бүтээгдэхүүн Wishlist-д нэмсэн нэмээгүй эсэхийг шалгах Variable зарлаж байна.
     // анхны default утгыг False гээд авлаа.
     let isAdded = false;
-
-    // wishlist-д хэрэв аль хэдийн нэмсэн бол Array дахь индексийг нь хадгална.
-    // анхны харгалзах утгыг -1 гэж авлаа. Учир нь Array index хэзээ ч -1 байх боломжгүй.
-    let wishlistIndex = -1;
 
     if (wishlistQty > 0) { // Wishlist -д ямар нэгэн бараа байх үед уг кодыг Execute хийнэ. 
       props.wishlist.map((a, index) => {
@@ -125,15 +158,25 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
               size={15}
             />
           </div>
-          <div className="basket-icon text-center text-light">
-            <a
-              onClick={() => {
-                addToBasket(props);
-              }}
-            >
-              <i class="bi bi-cart3"></i>
+
+          {inBasket(props.id) ?
+            <div className="basket-icon-green text-center text-light ">
+              <a onClick={() => { basket(props); }}>
+                <i className="bi bi-cart3"></i>
+              </a>
+            </div>
+            :
+            <div className="basket-icon text-center text-light">
+              <a onClick={() => { basket(props); }}>
+                <i className="bi bi-cart3"></i>
+              </a>
+            </div>}
+
+          {/* <div className="basket-icon text-center text-light">
+            <a onClick={() => { basket(props); }}>
+              <i className="bi bi-cart3"></i>
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
 

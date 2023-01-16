@@ -3,12 +3,36 @@ import { useState } from "react";
 export default function SearchBar(props) {
   const [hidewish, setHidewish] = useState(false);
 
-  function handWishlist() {
-    console.log("wishlist button clicked");
 
+
+
+  function handleBasket() {
+    if (props.basket.length > 0) {
+      let basket = document.getElementById("basket-container");
+
+      if (basket.style.display != "block") {
+        basket.style.display = "block";
+      } else {
+        basket.style.display = "none";
+      }
+    }
+  }
+
+  function removeFromBasket(id, props) {
+    console.log("--------To remove from Basket ");
+    console.log("Basket remove ID = " + id);
+    props.setBasket(props.basket.filter((a) => a.id !== id));
+  }
+
+
+  console.log("Wishlist array = ")
+  console.log(props.wishlist)
+
+
+
+  function handleWishlist() {
     if (props.wishlist.length > 0) {
       let wishlist = document.getElementById("wishlist-container");
-      console.log("wishlist size" + wishlist);
 
       if (wishlist.style.display != "block") {
         wishlist.style.display = "block";
@@ -18,9 +42,9 @@ export default function SearchBar(props) {
     }
   }
 
-  console.log("in Searchbar");
-  console.log(props.wishlist.length);
-  console.log(props.wishlist);
+  console.log("Basket array = ")
+  console.log(props.basket)
+
 
   function removeFromWishlist(id, props) {
     console.log("--------To remove from wishlist ");
@@ -28,10 +52,19 @@ export default function SearchBar(props) {
     props.setWishlist(props.wishlist.filter((a) => a.id !== id));
   }
 
+
+
   function closeWishlist() {
     if (props.wishlist.length > 0) {
       let wishlist = document.getElementById("wishlist-container");
       wishlist.style.display = "none";
+    }
+  }
+
+  function closeBasket() {
+    if (props.basket.length > 0) {
+      let basket = document.getElementById("basket-container");
+      basket.style.display = "none";
     }
   }
 
@@ -66,7 +99,7 @@ export default function SearchBar(props) {
               Sign in
             </div>
             <div className="favorite">
-              <i className="bi bi-suit-heart" onClick={handWishlist}>
+              <i className="bi bi-suit-heart" onClick={handleWishlist}>
                 {props.wishlist.length > 0 ? (
                   <div id="wishSize">
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -79,10 +112,16 @@ export default function SearchBar(props) {
               </i>
             </div>
             <div className="basket">
-              <i className="bi bi-cart">
-                <span className="position-absolute top-0 start-95 translate-middle badge rounded-pill bg-danger">
-                  5
-                </span>
+              <i className="bi bi-cart" onClick={handleBasket}>
+                {props.basket.length > 0 ? (
+                  <div id="basketSize">
+                    <span className="position-absolute top-0 start-95 translate-middle badge rounded-pill bg-danger">
+                      {props.basket.length}
+                    </span>
+                  </div>
+                ) : (
+                  <p></p>
+                )}
               </i>
             </div>
           </div>
@@ -110,7 +149,32 @@ export default function SearchBar(props) {
         ) : (
           <div></div>
         )}
+
+        {props.basket.length > 0 ? (
+          <div id="basket-container">
+            <a onClick={() => closeBasket()}><i className="bi bi-x-circle-fill close-btn"> </i></a>
+            <h3>My basket</h3>
+
+            {props.basket.map((basket, index) => {
+              return (
+                <div key={index} className="d-flex justify-content-between">
+                  ID: {basket.id} <span className="space"></span>
+                  <div className="d-flex justify-content-between">
+                    {basket.title} <span className="space"></span>
+                    <a onClick={() => removeFromBasket(basket.id, props)}>
+                      <i className="bi bi-x-circle-fill"> </i>
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div></div>
+        )}
+
+
       </div>
-    </div>
+    </div >
   );
 }
