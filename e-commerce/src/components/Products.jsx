@@ -37,6 +37,11 @@ function Products(props) {
     if (isRed) {
       setIsRed(false);
       props.setChangeColor(false);
+      const me = {
+        id: props.id,
+        colorState: false
+      }
+      props.setProductColors([...props.productColors, me])
     } else {
       setIsRed(true);
       props.setChangeColor(true);
@@ -56,12 +61,26 @@ function Products(props) {
         }
       });
       if (wishlistIndex != -1) {
-        props.wishlist.splice(wishlistIndex, 1);
+        // props.wishlist.splice(wishlistIndex, 1);
         props.setWishlist(props.wishlist.filter((a) => a.id !== props.id));
 
         setIsRed(false);
         props.setChangeColor(false);
       }
+    }
+
+    const found = props.wishlist.filter((a) => {
+      if (a.id == props.id) {
+        console.log("Found")
+        console.log("props.id " + props.id)
+        return a
+      }
+    })
+
+    if (found.length > 0) {
+      setIsRed(true)
+    } else {
+      setIsRed(false)
     }
 
     if (isAdded == false) {
@@ -70,6 +89,7 @@ function Products(props) {
         {
           id: props.id,
           title: props.title,
+          isRed: props.changeColor
         },
       ]);
       // props.setChangeColor('black');
@@ -87,6 +107,7 @@ function Products(props) {
           }}
         >
           {/* <i className="bi bi-heart-fill" style={{ color: props.changeColor }}></i> */}
+
 
           <i
             className="bi bi-heart-fill"

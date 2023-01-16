@@ -24,6 +24,7 @@ function App() {
 
   const [wishlist, setWishlist] = useState([])
   const [changeColor, setChangeColor] = useState(false)
+  const [productColors, setProductColors] = useState([])
   // const [isRed, setIsRed] = useState(false);
 
 
@@ -75,7 +76,8 @@ function App() {
           setWishlist={setWishlist}
           changeColor={changeColor}
           setChangeColor={setChangeColor}
-
+          productColors={productColors}
+          setProductColors={setProductColors}
         />
       )
     }
@@ -96,6 +98,8 @@ function App() {
           setWishlist={setWishlist}
           changeColor={changeColor}
           setChangeColor={setChangeColor}
+          productColors={productColors}
+          setProductColors={setProductColors}
         />
       )
     }
@@ -188,11 +192,12 @@ function App() {
 
 
         <SearchBar
-
           wishlist={wishlist}
           setWishlist={setWishlist}
           changeColor={changeColor}
           setChangeColor={setChangeColor}
+          productColors={productColors}
+          setProductColors={setProductColors}
         />
 
         <AliceCarousel autoPlay autoPlayInterval="3000"

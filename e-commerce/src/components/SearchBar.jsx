@@ -10,6 +10,7 @@ export default function SearchBar(props) {
 
   function handWishlist() {
     console.log("wishlist button clicked");
+
     if (props.wishlist.length > 0) {
       let wishlist = document.getElementById("wishlist-container");
       console.log("wishlist size" + wishlist);
@@ -31,8 +32,14 @@ export default function SearchBar(props) {
     console.log("wishlist remove ID = " + id);
     props.setWishlist(props.wishlist.filter((a) => a.id !== id));
     console.log("props.changeColor = " + props.changeColor);
-
-    props.setChangeColor(true);
+    console.log(props.productColors)
+    // console.log("props id = " + id)
+    if (props.changeColor == true) {
+      props.setChangeColor(false);
+    } else {
+      props.setChangeColor(true);
+    }
+    // props.setChangeColor(() => { props.setChangeColor(false) });
     // props.setWishlist(props.wishlist)
     // props.wishlist.filter(a => {
 
