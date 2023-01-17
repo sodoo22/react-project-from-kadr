@@ -171,7 +171,7 @@ export default function SearchBar(props) {
 
             {props.basket.map((basket, index) => {
               return (
-                <div key={index} className="wishlist-product">
+                <div key={index} className="basket-product">
                   <img src={basket.imgUrl} alt="basket.title" />
                   <div>
                     <div>{basket.title}</div>
