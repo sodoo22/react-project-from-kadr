@@ -1,8 +1,17 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+
 
 export default function SearchBar(props) {
   const [hidewish, setHidewish] = useState(false);
+  const notifyBasketRemove = (title) => toast.error(title + "-г сагснаас амжилттай устгалаа.! ", {
+    icon: <i class="bi bi-trash3"></i>
+  });
 
+  const notifyWishlistRemove = (title) => toast.error(title + "-г Wislist-ээс амжилттай устгалаа .! ", {
+    icon: <i class="bi bi-trash3"></i>
+  });
 
 
 
@@ -18,16 +27,16 @@ export default function SearchBar(props) {
     }
   }
 
-  function removeFromBasket(id, props) {
+  function removeFromBasket(id, title, props) {
     console.log("--------To remove from Basket ");
     console.log("Basket remove ID = " + id);
     props.setBasket(props.basket.filter((a) => a.id !== id));
+    notifyBasketRemove(title);
   }
 
 
   console.log("Wishlist array = ")
   console.log(props.wishlist)
-
 
 
   function handleWishlist() {
@@ -46,10 +55,11 @@ export default function SearchBar(props) {
   console.log(props.basket)
 
 
-  function removeFromWishlist(id, props) {
+  function removeFromWishlist(id, title, props) {
     console.log("--------To remove from wishlist ");
     console.log("wishlist remove ID = " + id);
     props.setWishlist(props.wishlist.filter((a) => a.id !== id));
+    notifyWishlistRemove(title);
   }
 
 
@@ -96,7 +106,8 @@ export default function SearchBar(props) {
             <div className="signin">
               <i className="bi bi-person"></i>
               <span className="space"> </span>
-              Sign in
+              <Link to={"/signup"}>Sign in</Link>
+
             </div>
             <div className="favorite">
               <i className="bi bi-suit-heart" onClick={handleWishlist}>
@@ -134,11 +145,14 @@ export default function SearchBar(props) {
 
             {props.wishlist.map((myWishList, index) => {
               return (
-                <div key={index} className="d-flex justify-content-between">
-                  ID: {myWishList.id} <span className="space"></span>
-                  <div className="d-flex justify-content-between">
-                    {myWishList.title} <span className="space"></span>
-                    <a onClick={() => removeFromWishlist(myWishList.id, props)}>
+                <div key={index} className="wishlist-product">
+                  <img src={myWishList.imgUrl} alt="myWishList.title" />
+                  <div>
+                    <div>{myWishList.title}</div>
+                    <div>${myWishList.price}</div>
+                  </div>
+                  <div>
+                    <a onClick={() => removeFromWishlist(myWishList.id, myWishList.title, props)}>
                       <i className="bi bi-x-circle-fill"> </i>
                     </a>
                   </div>
@@ -157,11 +171,14 @@ export default function SearchBar(props) {
 
             {props.basket.map((basket, index) => {
               return (
-                <div key={index} className="d-flex justify-content-between">
-                  ID: {basket.id} <span className="space"></span>
-                  <div className="d-flex justify-content-between">
-                    {basket.title} <span className="space"></span>
-                    <a onClick={() => removeFromBasket(basket.id, props)}>
+                <div key={index} className="wishlist-product">
+                  <img src={basket.imgUrl} alt="basket.title" />
+                  <div>
+                    <div>{basket.title}</div>
+                    <div>${basket.price}</div>
+                  </div>
+                  <div>
+                    <a onClick={() => removeFromBasket(basket.id, basket.title, props)}>
                       <i className="bi bi-x-circle-fill"> </i>
                     </a>
                   </div>

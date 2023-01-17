@@ -132,17 +132,12 @@ function App() {
   return (
 
 
-
     <div className="App">
-
       <div id='product-container' className='container'>
 
         <CallService />
 
         <MainMenu />
-
-
-
 
         <SearchBar
           wishlist={wishlist}

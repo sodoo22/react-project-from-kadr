@@ -58,7 +58,9 @@ function Products(props) {
         ...props.basket,
         {
           id: props.id,
-          title: props.title
+          title: props.title,
+          price: props.price,
+          imgUrl: props.imgUrl
         },
       ]);
     }
@@ -73,9 +75,6 @@ function Products(props) {
     })
     return result // утгаа буцаая
   }
-
-
-
 
 
   // Wishlist-д нэмэх function
@@ -110,7 +109,9 @@ function Products(props) {
         ...props.wishlist,
         {
           id: props.id,
-          title: props.title
+          title: props.title,
+          price: props.price,
+          imgUrl: props.imgUrl
         },
       ]);
     }
@@ -160,7 +161,7 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
 
       </div>
       <div className="position-relative">
-        <div className="product-img-container " onClick={handleShow}>
+        <div className="product-img-container ">
           <img src={props.imgUrl} alt="image" />
         </div>
 
