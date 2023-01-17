@@ -2,6 +2,9 @@ import { Rating } from "react-simple-star-rating";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { ToastContainer, toast } from 'react-toastify';
+
+
 
 function Products(props) {
   // const [basket, setBasket] = useState(0);
@@ -9,6 +12,21 @@ function Products(props) {
 
   const handleClose = () => props.setShow(!props.show);
   const handleShow = () => props.setShow(!props.show);
+  const notifyBasketAdd = () => toast(props.title + "-г сагсанд амжилттай нэмлээ.! ", {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
+  const notifyWishlistAdd = () => toast(props.title + "-г Wislist-д амжилттай нэмлээ.! ");
+  const notifyBasketRemove = () => toast(props.title + "-г сагснаас амжилттай устгалаа.! ");
+  const notifyWishlistRemove = () => toast(props.title + "-г Wislist-ээс амжилттай устгалаа .! ");
+
+
 
   // Catch Rating value
   const handleRating = (rate) => {
@@ -29,11 +47,13 @@ function Products(props) {
         }
       });
       if (isAdded) {
+        notifyBasketRemove()
         props.setBasket(props.basket.filter((a) => a.id !== props.id));
       }
     }
 
     if (isAdded == false) {
+      notifyBasketAdd()
       props.setBasket([
         ...props.basket,
         {
@@ -63,6 +83,7 @@ function Products(props) {
     // Wishlist-д нэмэх гэж оролдож буй бүтээгдэхүүний ID-г хэвлэж шалгаж байна.
     console.log("added to Wishlist ---->  ID = " + props.id);
 
+
     let wishlistQty = props.wishlist.length; // Wishlist-ийн хэмжээг хадгалах
 
     // Уг бүтээгдэхүүн Wishlist-д нэмсэн нэмээгүй эсэхийг шалгах Variable зарлаж байна.
@@ -76,6 +97,7 @@ function Products(props) {
         }
       });
       if (isAdded) {
+        notifyWishlistRemove()
         // Хадгалсан байвал устгана. Учир нь энэ бараан дээр 2 дахь удаагаа дарж байгаа үед Устгах зорилгоор дарсан байх гэж үзнэ.
         props.setWishlist(props.wishlist.filter((a) => a.id !== props.id));
         // filter-ээр хайгаад уг ID-наас бусад барааг шүүж аваад SetWishlist state ашиглан хадгална.
@@ -83,6 +105,7 @@ function Products(props) {
     }
 
     if (isAdded == false) { // хэрэв уг барааг нэмээгүй байсан бол Array-руу нэмнэ.
+      notifyWishlistAdd();
       props.setWishlist([
         ...props.wishlist,
         {
@@ -116,6 +139,7 @@ function Products(props) {
         <a
           onClick={() => {
             addToWishlist(props);
+
           }}
         >
 
@@ -133,6 +157,7 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
           ></i>
 
         </a>
+
       </div>
       <div className="position-relative">
         <div className="product-img-container " onClick={handleShow}>
@@ -161,7 +186,10 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
 
           {inBasket(props.id) ?
             <div className="basket-icon-green text-center text-light ">
-              <a onClick={() => { basket(props); }}>
+              <a onClick={() => {
+                basket(props);
+
+              }}>
                 <i className="bi bi-cart3"></i>
               </a>
             </div>

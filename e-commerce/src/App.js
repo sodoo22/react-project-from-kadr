@@ -21,6 +21,7 @@ import { Link, Routes, Route } from 'react-router-dom'
 import Signup from './components/Signup';
 import NotFound from './components/NotFound';
 import Home from './components/Home'
+import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
 
@@ -150,6 +151,18 @@ function App() {
           setBasket={setBasket}
         />
 
+        <ToastContainer
+          position="bottom-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
 
         <AliceCarousel autoPlay autoPlayInterval="3000"
           disableButtonsControls
