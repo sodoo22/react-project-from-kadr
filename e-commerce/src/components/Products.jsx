@@ -12,19 +12,19 @@ function Products(props) {
 
   const handleClose = () => props.setShow(!props.show);
   const handleShow = () => props.setShow(!props.show);
-  const notifyBasketAdd = () => toast(props.title + "-г сагсанд амжилттай нэмлээ.! ", {
-    position: "top-right",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
+  const notifyBasketAdd = () => toast.success(props.title + "-г сагсанд амжилттай нэмлээ.! ", {
+    icon: <i class="bi bi-cart-check"></i>
   });
-  const notifyWishlistAdd = () => toast(props.title + "-г Wislist-д амжилттай нэмлээ.! ");
-  const notifyBasketRemove = () => toast(props.title + "-г сагснаас амжилттай устгалаа.! ");
-  const notifyWishlistRemove = () => toast(props.title + "-г Wislist-ээс амжилттай устгалаа .! ");
+  const notifyWishlistAdd = () => toast.success(props.title + "-г Wislist-д амжилттай нэмлээ.! ", {
+    icon: <i class="bi bi-heart"></i>
+  });
+  const notifyBasketRemove = () => toast.error(props.title + "-г сагснаас амжилттай устгалаа.! ", {
+    icon: <i class="bi bi-trash3"></i>
+  });
+
+  const notifyWishlistRemove = () => toast.error(props.title + "-г Wislist-ээс амжилттай устгалаа .! ", {
+    icon: <i class="bi bi-trash3"></i>
+  });
 
 
 
