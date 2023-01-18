@@ -4,7 +4,8 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 export default function SearchBar(props) {
-  const [hidewish, setHidewish] = useState(false);
+  const [showWish, setShowWish] = useState(false);
+  const [showBasket, setShowBasket] = useState(false);
   const notifyBasketRemove = (title) => toast.error(title + "-г сагснаас амжилттай устгалаа.! ", {
     icon: <i class="bi bi-trash3"></i>
   });
@@ -15,17 +16,17 @@ export default function SearchBar(props) {
 
 
 
-  function handleBasket() {
-    if (props.basket.length > 0) {
-      let basket = document.getElementById("basket-container");
+  // function handleBasket() {
+  //   if (props.basket.length > 0) {
+  //     let basket = document.getElementById("basket-container");
 
-      if (basket.style.display != "block") {
-        basket.style.display = "block";
-      } else {
-        basket.style.display = "none";
-      }
-    }
-  }
+  //     if (basket.style.display != "block") {
+  //       basket.style.display = "block";
+  //     } else {
+  //       basket.style.display = "none";
+  //     }
+  //   }
+  // }
 
   function removeFromBasket(id, title, props) {
     console.log("--------To remove from Basket ");
@@ -39,17 +40,17 @@ export default function SearchBar(props) {
   console.log(props.wishlist)
 
 
-  function handleWishlist() {
-    if (props.wishlist.length > 0) {
-      let wishlist = document.getElementById("wishlist-container");
+  // function handleWishlist() {
+  //   if (props.wishlist.length > 0) {
+  //     let wishlist = document.getElementById("wishlist-container");
 
-      if (wishlist.style.display != "block") {
-        wishlist.style.display = "block";
-      } else {
-        wishlist.style.display = "none";
-      }
-    }
-  }
+  //     if (wishlist.style.display != "block") {
+  //       wishlist.style.display = "block";
+  //     } else {
+  //       wishlist.style.display = "none";
+  //     }
+  //   }
+  // }
 
   console.log("Basket array = ")
   console.log(props.basket)
@@ -64,19 +65,19 @@ export default function SearchBar(props) {
 
 
 
-  function closeWishlist() {
-    if (props.wishlist.length > 0) {
-      let wishlist = document.getElementById("wishlist-container");
-      wishlist.style.display = "none";
-    }
-  }
+  // function closeWishlist() {
+  //   if (props.wishlist.length > 0) {
+  //     // let wishlist = document.getElementById("wishlist-container");
+  //     // wishlist.style.display = "none";
+  //   }
+  // }
 
-  function closeBasket() {
-    if (props.basket.length > 0) {
-      let basket = document.getElementById("basket-container");
-      basket.style.display = "none";
-    }
-  }
+  // function closeBasket() {
+  //   if (props.basket.length > 0) {
+  //     let basket = document.getElementById("basket-container");
+  //     basket.style.display = "none";
+  //   }
+  // }
 
   return (
     <div className="searchbar-container">
@@ -110,7 +111,7 @@ export default function SearchBar(props) {
 
             </div>
             <div className="favorite">
-              <i className="bi bi-suit-heart" onClick={handleWishlist}>
+              <i className="bi bi-suit-heart" onClick={() => setShowWish(!showWish)}>
                 {props.wishlist.length > 0 ? (
                   <div id="wishSize">
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -123,7 +124,7 @@ export default function SearchBar(props) {
               </i>
             </div>
             <div className="basket">
-              <i className="bi bi-cart" onClick={handleBasket}>
+              <i className="bi bi-cart" onClick={() => setShowBasket(!showBasket)}>
                 {props.basket.length > 0 ? (
                   <div id="basketSize">
                     <span className="position-absolute top-0 start-95 translate-middle badge rounded-pill bg-danger">
@@ -138,12 +139,12 @@ export default function SearchBar(props) {
           </div>
         </div>
 
-        {props.wishlist.length > 0 ? (
+        {showWish && (
           <div id="wishlist-container">
-            <a onClick={() => closeWishlist()}><i className="bi bi-x-circle-fill close-btn"> </i></a>
-            <h3>My wishlist</h3>
+            <a onClick={() => setShowWish(false)}><i className="bi bi-x-circle-fill close-btn"> </i></a>
+            <h4>My wishlist</h4>
 
-            {props.wishlist.map((myWishList, index) => {
+            {props.wishlist.length > 0 ? (props.wishlist.map((myWishList, index) => {
               return (
                 <div key={index} className="wishlist-product">
                   <img src={myWishList.imgUrl} alt="myWishList.title" />
@@ -158,38 +159,39 @@ export default function SearchBar(props) {
                   </div>
                 </div>
               );
-            })}
+            })) : <div>
+              <h5>Your wishlist is empty</h5>
+            </div>}
           </div>
-        ) : (
-          <div></div>
         )}
 
-        {props.basket.length > 0 ? (
+        {showBasket && (
           <div id="basket-container">
-            <a onClick={() => closeBasket()}><i className="bi bi-x-circle-fill close-btn"> </i></a>
-            <h3>My basket</h3>
+            <a onClick={() => setShowBasket(false)}><i className="bi bi-x-circle-fill close-btn"> </i></a>
+            <h4>My basket</h4>
 
-            {props.basket.map((basket, index) => {
-              return (
-                <div key={index} className="basket-product">
-                  <img src={basket.imgUrl} alt="basket.title" />
-                  <div>
-                    <div>{basket.title}</div>
-                    <div>${basket.price}</div>
+
+            {props.basket.length > 0 ?
+              (props.basket.map((basket, index) => {
+                return (
+                  <div key={index} className="basket-product">
+                    <img src={basket.imgUrl} alt="basket.title" />
+                    <div>
+                      <div>{basket.title}</div>
+                      <div>${basket.price}</div>
+                    </div>
+                    <div>
+                      <a onClick={() => removeFromBasket(basket.id, basket.title, props)}>
+                        <i className="bi bi-x-circle-fill"> </i>
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <a onClick={() => removeFromBasket(basket.id, basket.title, props)}>
-                      <i className="bi bi-x-circle-fill"> </i>
-                    </a>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })) : <div>
+                <h5>Your wishlist is empty</h5>
+              </div>}
           </div>
-        ) : (
-          <div></div>
         )}
-
 
       </div>
     </div >

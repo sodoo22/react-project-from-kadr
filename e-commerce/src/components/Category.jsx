@@ -1,17 +1,31 @@
-function Category(props) {
-    return (
-        <div className="">
-            <div className="category-card d-flex">
-                <div className="card-img-container">
-                    <img src={props.imgUrl} alt="image" />
-                </div>
-                <div className="category-text text-center">
-                    <div className="title">{props.title}</div>
-                    <div className="item text-center">({props.items} items)</div>
-                </div>
+import categoryData from '../data/categories';
+import AliceCarousel from 'react-alice-carousel'
 
+function Category() {
+    const categories = categoryData.map((data, index) => {
+        return (
+            <div className="">
+                <div className="category-card d-flex">
+                    <div className="card-img-container">
+                        <img src={data.imgUrl} alt="image" />
+                    </div>
+                    <div className="category-text text-center">
+                        <div className="title">{data.title}</div>
+                        <div className="item text-center">({data.items} items)</div>
+                    </div>
+                </div>
             </div>
-        </div>
+        )
+    })
+
+    return (
+
+        <AliceCarousel
+            autoPlay autoPlayInterval="3000"
+            disableButtonsControls
+            mouseTracking
+            items={categories}
+            responsive={{ 0: { items: 3, } }} />
     )
 }
 

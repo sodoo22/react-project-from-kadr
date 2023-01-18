@@ -1,4 +1,4 @@
-export default function Banner2(props) {
+export default function Poster(props) {
   return (
     <div className="banner-container2 container">
 
@@ -18,9 +18,6 @@ export default function Banner2(props) {
         </div>
 
       </div>
-
-
-
 
     </div >
   );
