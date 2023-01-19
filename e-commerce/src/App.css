@@ -490,6 +490,9 @@ Navbar {}
   /* padding: 50px; */
 }
 
+.signup-container {
+  margin-top: 250px;
+}
 
 .signup-container form {
   display: flex;
@@ -518,4 +521,25 @@ Navbar {}
 .alice-carousel__dots-item:not(.__custom):hover,
 .alice-carousel__dots-item:not(.__custom).__active {
   background-color: #EDA415 !important;
+}
+
+.alice-carousel__prev-btn {
+  position: absolute;
+  left: -50%;
+  top: 45px;
+}
+
+.alice-carousel__next-btn {
+  position: absolute;
+  left: 100%;
+  top: 45px;
+}
+
+
+.carousel-container {
+  position: relative;
+}
+
+.details-container {
+  margin-top: 250px;
 }

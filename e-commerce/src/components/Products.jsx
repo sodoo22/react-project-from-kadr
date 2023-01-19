@@ -2,9 +2,8 @@ import { Rating } from "react-simple-star-rating";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { ToastContainer, toast } from 'react-toastify';
-
-
+import { ToastContainer, toast } from "react-toastify";
+import { Link, Routes, Route } from "react-router-dom";
 
 function Products(props) {
   // const [basket, setBasket] = useState(0);
@@ -12,21 +11,23 @@ function Products(props) {
 
   const handleClose = () => props.setShow(!props.show);
   const handleShow = () => props.setShow(!props.show);
-  const notifyBasketAdd = () => toast.success(props.title + "-г сагсанд амжилттай нэмлээ.! ", {
-    icon: <i class="bi bi-cart-check"></i>
-  });
-  const notifyWishlistAdd = () => toast.success(props.title + "-г Wislist-д амжилттай нэмлээ.! ", {
-    icon: <i class="bi bi-heart"></i>
-  });
-  const notifyBasketRemove = () => toast.error(props.title + "-г сагснаас амжилттай устгалаа.! ", {
-    icon: <i class="bi bi-trash3"></i>
-  });
+  const notifyBasketAdd = () =>
+    toast.success(props.title + "-г сагсанд амжилттай нэмлээ.! ", {
+      icon: <i class="bi bi-cart-check"></i>,
+    });
+  const notifyWishlistAdd = () =>
+    toast.success(props.title + "-г Wislist-д амжилттай нэмлээ.! ", {
+      icon: <i class="bi bi-heart"></i>,
+    });
+  const notifyBasketRemove = () =>
+    toast.error(props.title + "-г сагснаас амжилттай устгалаа.! ", {
+      icon: <i class="bi bi-trash3"></i>,
+    });
 
-  const notifyWishlistRemove = () => toast.error(props.title + "-г Wislist-ээс амжилттай устгалаа .! ", {
-    icon: <i class="bi bi-trash3"></i>
-  });
-
-
+  const notifyWishlistRemove = () =>
+    toast.error(props.title + "-г Wislist-ээс амжилттай устгалаа .! ", {
+      icon: <i class="bi bi-trash3"></i>,
+    });
 
   // Catch Rating value
   const handleRating = (rate) => {
@@ -47,20 +48,20 @@ function Products(props) {
         }
       });
       if (isAdded) {
-        notifyBasketRemove()
+        notifyBasketRemove();
         props.setBasket(props.basket.filter((a) => a.id !== props.id));
       }
     }
 
     if (isAdded == false) {
-      notifyBasketAdd()
+      notifyBasketAdd();
       props.setBasket([
         ...props.basket,
         {
           id: props.id,
           title: props.title,
           price: props.price,
-          imgUrl: props.imgUrl
+          imgUrl: props.imgUrl,
         },
       ]);
     }
@@ -72,16 +73,14 @@ function Products(props) {
       if (a.id == id) {
         result = true;
       }
-    })
-    return result // утгаа буцаая
+    });
+    return result; // утгаа буцаая
   }
-
 
   // Wishlist-д нэмэх function
   function addToWishlist(props) {
     // Wishlist-д нэмэх гэж оролдож буй бүтээгдэхүүний ID-г хэвлэж шалгаж байна.
     console.log("added to Wishlist ---->  ID = " + props.id);
-
 
     let wishlistQty = props.wishlist.length; // Wishlist-ийн хэмжээг хадгалах
 
@@ -89,21 +88,23 @@ function Products(props) {
     // анхны default утгыг False гээд авлаа.
     let isAdded = false;
 
-    if (wishlistQty > 0) { // Wishlist -д ямар нэгэн бараа байх үед уг кодыг Execute хийнэ. 
+    if (wishlistQty > 0) {
+      // Wishlist -д ямар нэгэн бараа байх үед уг кодыг Execute хийнэ.
       props.wishlist.map((a, index) => {
         if (a.id == props.id) {
           isAdded = true; // Уг бараа нь Wishlist-д олдвол True болгож өөрчлөнө
         }
       });
       if (isAdded) {
-        notifyWishlistRemove()
+        notifyWishlistRemove();
         // Хадгалсан байвал устгана. Учир нь энэ бараан дээр 2 дахь удаагаа дарж байгаа үед Устгах зорилгоор дарсан байх гэж үзнэ.
         props.setWishlist(props.wishlist.filter((a) => a.id !== props.id));
         // filter-ээр хайгаад уг ID-наас бусад барааг шүүж аваад SetWishlist state ашиглан хадгална.
       }
     }
 
-    if (isAdded == false) { // хэрэв уг барааг нэмээгүй байсан бол Array-руу нэмнэ.
+    if (isAdded == false) {
+      // хэрэв уг барааг нэмээгүй байсан бол Array-руу нэмнэ.
       notifyWishlistAdd();
       props.setWishlist([
         ...props.wishlist,
@@ -111,12 +112,11 @@ function Products(props) {
           id: props.id,
           title: props.title,
           price: props.price,
-          imgUrl: props.imgUrl
+          imgUrl: props.imgUrl,
         },
       ]);
     }
   }
-
 
   // Уг функц нь өгөдсөн ID бүхий бүтээгдэхүүн байгаа эсэхийг Wishlist array-гаас шалгана.
   // Буцаах утга нь Boolean (true or false)
@@ -127,12 +127,11 @@ function Products(props) {
     let result = false; // анхны утгыг False гэж зарлаж байна. Олдоогүй үед автоматаар FALSE буцна.
     props.wishlist.map((a) => {
       if (a.id == id) {
-        result = true; // олдчихвол утгаа TRUE болгоё. 
+        result = true; // олдчихвол утгаа TRUE болгоё.
       }
-    })
-    return result // утгаа буцаая
+    });
+    return result; // утгаа буцаая
   }
-
 
   return (
     <div className="product-card position-relative">
@@ -140,10 +139,8 @@ function Products(props) {
         <a
           onClick={() => {
             addToWishlist(props);
-
           }}
         >
-
           {/* HEART COLOR CHANGE */}
           {/* 
 inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхүүн Wishlist array-д байгаа эсэхийг
@@ -156,9 +153,7 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
             className="bi bi-heart-fill"
             style={{ color: inWishlist(props.id) ? "red" : "black" }}
           ></i>
-
         </a>
-
       </div>
       <div className="position-relative">
         <div className="product-img-container ">
@@ -166,10 +161,20 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
         </div>
 
         <div className="product-text">
-          <div className="title" onClick={handleShow}>
-            {props.id}. <span className="space"></span>
-            {props.title}
-          </div>
+          <Link
+            to={`/productDetails/${props.id}`}
+            state={{
+              title: props.title,
+              price: props.price,
+              imgUrl: props.imgUrl,
+            }}
+          >
+            <div className="title">
+              {props.id}. <span className="space"></span>
+              {props.title}
+            </div>
+          </Link>
+
           <div className="price" onClick={handleShow}>
             ${props.price}
           </div>
@@ -185,21 +190,27 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
             />
           </div>
 
-          {inBasket(props.id) ?
+          {inBasket(props.id) ? (
             <div className="basket-icon-green text-center text-light ">
-              <a onClick={() => {
-                basket(props);
-
-              }}>
+              <a
+                onClick={() => {
+                  basket(props);
+                }}
+              >
                 <i className="bi bi-cart3"></i>
               </a>
             </div>
-            :
+          ) : (
             <div className="basket-icon text-center text-light">
-              <a onClick={() => { basket(props); }}>
+              <a
+                onClick={() => {
+                  basket(props);
+                }}
+              >
                 <i className="bi bi-cart3"></i>
               </a>
-            </div>}
+            </div>
+          )}
 
           {/* <div className="basket-icon text-center text-light">
             <a onClick={() => { basket(props); }}>
