@@ -53,6 +53,7 @@ function Home({ wishlist, setWishlist, basket, setBasket }) {
                         rating={data.rating}
                         reviews={data.reviews}
                         quantity={data.quantity}
+                        color={data.color}
                         show={show}
                         setShow={setShow}
                         wishlist={wishlist}

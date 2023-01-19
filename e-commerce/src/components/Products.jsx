@@ -172,8 +172,8 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
               imgUrl: props.imgUrl,
               rating: props.rating,
               reviews: props.reviews,
-              quantity: props.quantity
-
+              quantity: props.quantity,
+              color: props.color
 
             }}
           >

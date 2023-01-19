@@ -572,5 +572,18 @@ Navbar {}
 .product-details .price {
   font-weight: 600px;
   color: #4A4A4A;
-  ;
+}
+
+.product-details .qty {
+  border-bottom: solid 1px #ddd;
+}
+
+.product-details .color {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  display: inline-block;
+  /* background-color: black; */
+  margin: 10px;
+  border: 1px solid black
 }

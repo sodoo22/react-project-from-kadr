@@ -25,7 +25,10 @@ const products = [
                 review: 'Loved this product'
             }
         ],
-        quantity: 4
+        quantity: 4,
+        color: [
+            'black'
+        ]
 
     },
     {
@@ -72,7 +75,11 @@ const products = [
                 review: 'Loved this product'
             }
         ],
-        quantity: 0
+        quantity: 0,
+        color: [
+            'black', 'brown', 'white'
+        ]
+
     },
     {
         id: 3,
@@ -86,7 +93,11 @@ const products = [
         price: 11.70,
         rating: 2,
         reviews: [],
-        quantity: 0
+        quantity: 0,
+        color: [
+            'black', 'brown', 'white'
+        ]
+
     },
     {
         id: 4,
@@ -113,7 +124,11 @@ const products = [
                 review: 'Loved this product'
             }
         ],
-        quantity: 9
+        quantity: 9,
+        color: [
+            '#000000', '#67001a', '#03c03c'
+        ]
+
     },
     {
         id: 5,
@@ -127,7 +142,11 @@ const products = [
         price: 11.70,
         rating: 1,
         reviews: [],
-        quantity: 0
+        quantity: 0,
+        color: [
+            'black', 'brown', 'white'
+        ]
+
     },
     {
         id: 6,
@@ -139,7 +158,11 @@ const products = [
         price: 11.70,
         rating: 5,
         reviews: [],
-        quantity: 9
+        quantity: 9,
+        color: [
+            'black', 'brown', 'white'
+        ]
+
     },
     {
         id: 7,
@@ -169,7 +192,11 @@ const products = [
         price: 11.70,
         rating: 5,
         reviews: [],
-        quantity: 9
+        quantity: 9,
+        color: [
+            'black', 'brown', 'white'
+        ]
+
     },
     {
         id: 8,
@@ -208,7 +235,11 @@ const products = [
         price: 11.70,
         rating: 3,
         reviews: [],
-        quantity: 9
+        quantity: 9,
+        color: [
+            'black', 'brown', 'white'
+        ]
+
     },
     {
         id: 9,
@@ -220,7 +251,11 @@ const products = [
         price: 1111,
         rating: 5,
         reviews: [],
-        quantity: 9
+        quantity: 9,
+        color: [
+            'black', 'brown', 'white'
+        ]
+
     },
 
     {
@@ -233,7 +268,11 @@ const products = [
         price: 11.70,
         rating: 5,
         reviews: [],
-        quantity: 9
+        quantity: 9,
+        color: [
+            'black', 'brown', 'white'
+        ]
+
     },
     {
         id: 11,
@@ -245,7 +284,11 @@ const products = [
         price: 299,
         rating: 2,
         reviews: [],
-        quantity: 9
+        quantity: 9,
+        color: [
+            'black', 'brown', 'white'
+        ]
+
     },
     {
         id: 12,
@@ -257,7 +300,11 @@ const products = [
         price: 11.70,
         rating: 3.5,
         reviews: [],
-        quantity: 9
+        quantity: 9,
+        color: [
+            'black', 'brown', 'white'
+        ]
+
     },
     {
         id: 13,
@@ -269,7 +316,11 @@ const products = [
         price: 11.70,
         rating: 1,
         reviews: [],
-        quantity: 9
+        quantity: 9,
+        color: [
+            'black', 'brown', 'white'
+        ]
+
     },
     {
         id: 14,
@@ -281,7 +332,11 @@ const products = [
         price: 11.70,
         rating: 5,
         reviews: [],
-        quantity: 9
+        quantity: 9,
+        color: [
+            'black', 'brown', 'white'
+        ]
+
     },
     {
         id: 15,
@@ -316,7 +371,11 @@ const products = [
         price: 11.70,
         rating: 5,
         reviews: [],
-        quantity: 9
+        quantity: 9,
+        color: [
+            'black', 'brown', 'white'
+        ]
+
     },
     {
         id: 16,
@@ -328,7 +387,11 @@ const products = [
         price: 11.70,
         rating: 5,
         reviews: [],
-        quantity: 9
+        quantity: 9,
+        color: [
+            'black', 'brown', 'white'
+        ]
+
     },
     {
         id: 17,
@@ -340,7 +403,11 @@ const products = [
         price: 11.70,
         rating: 5,
         reviews: [],
-        quantity: 9
+        quantity: 9,
+        color: [
+            'black', 'brown', 'white'
+        ]
+
     },
 ]
 

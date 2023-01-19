@@ -9,26 +9,16 @@ function ProductDetails() {
   console.log(product.imgUrl);
   console.log("length review = ", product.length);
 
-
-  // const images = [
-  //   {
-  //     original: `../${product.imgUrl}`,
-  //     thumbnail: `../${product.imgUrl}`,
-  //   },
-  //   {
-  //     original: `../${product.imgUrl}`,
-  //     thumbnail: "https://picsum.photos/id/1015/250/150/",
-  //   },
-  // ];
-
   console.log(product.imgUrl)
-  // const images = product.imgUrl.map(imgUrl => {
-  //   {
-  //     original: `../${imgUrl}`,
-  //       thumbnail: `../${imgUrl}`
-  //   }
-  // })
 
+  const colors = product.color.map((col, index) => {
+    let colorStyle = {
+      backgroundColor: `${col}`
+    }
+    console.log(colorStyle)
+    return <div className='color' key={index} style={colorStyle} >
+    </div >
+  });
 
   return (
     <div className="product-details container">
@@ -54,6 +44,13 @@ function ProductDetails() {
           {product.reviews.length > 0 ? (< span className='space'>  {product.reviews.length} reviews</span>) : (<span className='space'>No reviews</span>)}
         </div>
         <div className='availability'>Availability: {product.quantity > 0 ? (< span className='space text-success'> In Stock </span>) : (<span className='space text-danger'>Out of stock</span>)}
+        </div>
+        <div className='qty'>
+          {product.quantity > 0 ? (< span>  Hurry up! only {product.quantity} product left in stock!</span>) : (<span> {product.quantity} product left in stock!</span>)}
+        </div>
+        <div className='color-container'>
+          {/* {product.color.length > 0 ? (< span>  </span>) : (<span> </span>)} */}
+          Color: {colors}
         </div>
 
         {/* <img src={`../${product.imgUrl}`} alt="" /> */}
