@@ -540,6 +540,37 @@ Navbar {}
   position: relative;
 }
 
-.details-container {
+
+
+/* Product Details page */
+.product-details {
   margin-top: 250px;
+  display: flex;
+}
+
+.product-details .img-container {
+  width: 50%;
+}
+
+.product-details .details-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 0 48px;
+}
+
+.product-details .title,
+.product-details .price {
+  font-size: 30px;
+}
+
+.product-details .title {
+  font-weight: 500px;
+  color: #003F62;
+}
+
+.product-details .price {
+  font-weight: 600px;
+  color: #4A4A4A;
+  ;
 }

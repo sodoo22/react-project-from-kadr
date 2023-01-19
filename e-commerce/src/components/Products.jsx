@@ -11,6 +11,7 @@ function Products(props) {
 
   const handleClose = () => props.setShow(!props.show);
   const handleShow = () => props.setShow(!props.show);
+
   const notifyBasketAdd = () =>
     toast.success(props.title + "-г сагсанд амжилттай нэмлээ.! ", {
       icon: <i class="bi bi-cart-check"></i>,
@@ -29,11 +30,13 @@ function Products(props) {
       icon: <i class="bi bi-trash3"></i>,
     });
 
-  // Catch Rating value
-  const handleRating = (rate) => {
-    setRating(rate);
-    // other logic
-  };
+  // // Catch Rating value
+  // const handleRating = (rate) => {
+  //   setRating(rate);
+  //   // other logic
+  // };
+
+  console.log("Product review ===" + props.reviews.length)
 
   //  Сагсанд хийх function
   function basket(props) {
@@ -157,7 +160,7 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
       </div>
       <div className="position-relative">
         <div className="product-img-container ">
-          <img src={props.imgUrl} alt="image" />
+          <img src={props.imgUrl[0].original} alt="image" />
         </div>
 
         <div className="product-text">
@@ -167,6 +170,11 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
               title: props.title,
               price: props.price,
               imgUrl: props.imgUrl,
+              rating: props.rating,
+              reviews: props.reviews,
+              quantity: props.quantity
+
+
             }}
           >
             <div className="title">
@@ -180,7 +188,7 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
           </div>
           <div className="product-ratings">
             <Rating
-              onClick={handleRating}
+              // onClick={handleRating}
               // onPointerEnter={onPointerEnter}
               // onPointerLeave={onPointerLeave}
               // onPointerMove={onPointerMove}
