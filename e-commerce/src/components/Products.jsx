@@ -173,7 +173,8 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
               rating: props.rating,
               reviews: props.reviews,
               quantity: props.quantity,
-              color: props.color
+              color: props.color,
+              size: props.size
 
             }}
           >

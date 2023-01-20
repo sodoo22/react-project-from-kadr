@@ -27,6 +27,7 @@ const products = [
     ],
     quantity: 4,
     color: ["black"],
+    size: [`10"`],
   },
   {
     id: 2,
@@ -82,6 +83,7 @@ const products = [
     ],
     quantity: 0,
     color: ["black", "brown", "white"],
+    size: [`2"`, `4"`, `8"`, `15"`],
   },
   {
     id: 3,
@@ -97,6 +99,7 @@ const products = [
     reviews: [],
     quantity: 0,
     color: ["black", "brown", "white"],
+    size: [2, 4, 8, 15],
   },
   {
     id: 4,
@@ -125,6 +128,7 @@ const products = [
     ],
     quantity: 9,
     color: ["#000000", "#67001a", "#03c03c"],
+    size: [2, 4, 8, 15],
   },
   {
     id: 5,
@@ -140,6 +144,7 @@ const products = [
     reviews: [],
     quantity: 0,
     color: ["black", "brown", "white"],
+    size: [2, 4, 8, 15],
   },
   {
     id: 6,
@@ -155,6 +160,7 @@ const products = [
     reviews: [],
     quantity: 9,
     color: ["black", "brown", "white"],
+    size: [2, 4, 8, 15],
   },
   {
     id: 7,
@@ -196,6 +202,7 @@ const products = [
     reviews: [],
     quantity: 9,
     color: ["black", "brown", "white"],
+    size: [2, 4, 8, 15],
   },
   {
     id: 8,
@@ -249,6 +256,7 @@ const products = [
     reviews: [],
     quantity: 9,
     color: ["black", "brown", "white"],
+    size: [2, 4, 8, 15],
   },
   {
     id: 9,
@@ -264,6 +272,7 @@ const products = [
     reviews: [],
     quantity: 9,
     color: ["black", "brown", "white"],
+    size: [2, 4, 8, 15],
   },
 
   {
@@ -280,6 +289,7 @@ const products = [
     reviews: [],
     quantity: 9,
     color: ["black", "brown", "white"],
+    size: [2, 4, 8, 15],
   },
   {
     id: 11,
@@ -295,6 +305,7 @@ const products = [
     reviews: [],
     quantity: 9,
     color: ["black", "brown", "white"],
+    size: [2, 4, 8, 15],
   },
   {
     id: 12,
@@ -310,6 +321,7 @@ const products = [
     reviews: [],
     quantity: 9,
     color: ["black", "brown", "white"],
+    size: [2, 4, 8, 15],
   },
   {
     id: 13,
@@ -325,6 +337,7 @@ const products = [
     reviews: [],
     quantity: 9,
     color: ["black", "brown", "white"],
+    size: [2, 4, 8, 15],
   },
   {
     id: 14,
@@ -340,6 +353,7 @@ const products = [
     reviews: [],
     quantity: 9,
     color: ["black", "brown", "white"],
+    size: [2, 4, 8, 15],
   },
   {
     id: 15,
@@ -387,6 +401,7 @@ const products = [
     reviews: [],
     quantity: 9,
     color: ["black", "brown", "white"],
+    size: [2, 4, 8, 15],
   },
   {
     id: 16,
@@ -402,6 +417,7 @@ const products = [
     reviews: [],
     quantity: 9,
     color: ["black", "brown", "white"],
+    size: [2, 4, 8, 15],
   },
   {
     id: 17,
@@ -417,6 +433,7 @@ const products = [
     reviews: [],
     quantity: 9,
     color: ["black", "brown", "white"],
+    size: [2, 4, 8, 15],
   },
 ];
 

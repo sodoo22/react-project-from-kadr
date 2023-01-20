@@ -20,6 +20,10 @@ function ProductDetails() {
     </div >
   });
 
+  const sizes = product.size.map((s, index) => {
+    return <div className='size' key={index}> {s} </div>
+  })
+
   return (
     <div className="product-details container">
 
@@ -49,8 +53,13 @@ function ProductDetails() {
           {product.quantity > 0 ? (< span>  Hurry up! only {product.quantity} product left in stock!</span>) : (<span> {product.quantity} product left in stock!</span>)}
         </div>
         <div className='color-container'>
-          {/* {product.color.length > 0 ? (< span>  </span>) : (<span> </span>)} */}
           Color: {colors}
+        </div>
+        <div>
+          {product.size.length > 0 && <div className='size-container'>Size:  {sizes} </div>}
+        </div>
+        <div className='order-qty'>
+          Quantity: <button>-</button> 1 <button>+</button>
         </div>
 
         {/* <img src={`../${product.imgUrl}`} alt="" /> */}

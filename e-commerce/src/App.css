@@ -559,6 +559,10 @@ Navbar {}
   padding: 0 48px;
 }
 
+.details-container {
+  padding: 10px 0;
+}
+
 .product-details .title,
 .product-details .price {
   font-size: 30px;
@@ -572,10 +576,16 @@ Navbar {}
 .product-details .price {
   font-weight: 600px;
   color: #4A4A4A;
+  padding: 10px 0;
+}
+
+.product-details .availability {
+  padding: 10px 0;
 }
 
 .product-details .qty {
   border-bottom: solid 1px #ddd;
+  padding-bottom: 16px;
 }
 
 .product-details .color {
@@ -584,6 +594,26 @@ Navbar {}
   border-radius: 15px;
   display: inline-block;
   /* background-color: black; */
-  margin: 10px;
-  border: 1px solid black
+  border: 1px solid black,
+}
+
+.product-details .color-container {
+  padding: 28px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-details .size {
+  width: 63px;
+  height: 32px;
+  display: inline-block;
+  background-color: #EEEEEE;
+  text-align: center;
+}
+
+.product-details .size-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }

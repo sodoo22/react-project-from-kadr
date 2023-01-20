@@ -54,6 +54,7 @@ function Home({ wishlist, setWishlist, basket, setBasket }) {
                         reviews={data.reviews}
                         quantity={data.quantity}
                         color={data.color}
+                        size={data.size}
                         show={show}
                         setShow={setShow}
                         wishlist={wishlist}
@@ -119,9 +120,9 @@ function Home({ wishlist, setWishlist, basket, setBasket }) {
 
                 <AliceCarousel autoPlay autoPlayInterval="8000" disableButtonsControls>
                     <div className="product-cards-container">{populateProduct(0, 7)}</div>
-                    <div className="product-cards-container">
+                    {/* <div className="product-cards-container">
                         {populateProduct(8, 15)}
-                    </div>
+                    </div> */}
                 </AliceCarousel>
 
                 <Poster />
