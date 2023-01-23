@@ -604,16 +604,156 @@ Navbar {}
   gap: 10px;
 }
 
+.color-container .color {
+  border: 1px solid #bbb;
+}
+
+.color-container .color:hover {
+  border: solid 3px red;
+}
+
 .product-details .size {
   width: 63px;
   height: 32px;
   display: inline-block;
   background-color: #EEEEEE;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-details .size-container {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.size-container .size:hover {
+  border: 1px solid #AAA;
+}
+
+.order-qty {
+  padding-top: 26px;
+  padding-bottom: 42px;
+}
+
+.product-details .order-qty button,
+.product-details .orderQty {
+  height: 32px;
+  background-color: #EEE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #BDBDBD;
+}
+
+.product-details .order-qty button {
+  width: 35px;
+}
+
+.product-details .order-qty button:first-child {
+  margin-left: 20px;
+}
+
+.product-details .orderQty {
+  width: 63px;
+}
+
+.btn-common {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 23px;
+}
+
+.btn-basket-yellow {
+  background-color: #EDA415;
+  border-radius: 32px;
+  width: 241px;
+  height: 73px;
+  border: none;
+  color: #ffffff;
+  margin-right: 20px;
+}
+
+.btn-wishlist-white {
+  background-color: #EEEEEE;
+  border-radius: 500px;
+  width: 74px;
+  height: 73px;
+  padding: 18px 25px;
+  border: none;
+}
+
+.btn-wishlist-white i {
+  color: #292D32;
+}
+
+.product-details .button-container {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 25px;
+}
+
+.product-details .sku {
+  padding-top: 15px;
+}
+
+.product-details .category {
+  padding: 31px 0;
+}
+
+.product-details .share {}
+
+.description-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 78px;
+  gap: 20px;
+}
+
+.btn-description,
+.btn-reviews {
+  border-radius: 20px;
+  width: 187px;
+  height: 60px;
+  /* padding: 18px 25px; */
+  border: none;
+}
+
+.btn-description {
+  color: #003F62;
+  background-color: #ffffff;
+  border: 1px solid #8F8F8F;
+}
+
+.btn-reviews {
+  background-color: #003F62;
+  color: #ffffff;
+  border: 1px solid #8F8F8F;
+}
+
+.reviews-container {
+  height: 223px;
+  border: 1px solid #B8B8B8;
+  border-radius: 20px;
+  margin-top: 35px;
+}
+
+.reviews-container .header {
+  padding-top: 42px;
+  padding-left: 49px;
+}
+
+.reviews-container .reviews-txt {
+  padding-top: 17px;
+  padding-left: 49px;
+}
+
+.write-review-btn {
+  margin-top: 17px;
+  margin-left: 49px;
+  width: 196px;
+  height: 40px;
+  background-color: #003F62;
+  color: #ffffff;
 }
