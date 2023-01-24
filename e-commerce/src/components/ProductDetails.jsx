@@ -7,7 +7,9 @@ function ProductDetails() {
   const location = useLocation();
   const product = location.state;
   const [orderQty, setOrderQty] = useState(1);
-  const [colorSelected, setColorSelected] = useState(false);
+  const [colorSelected, setColorSelected] = useState(0);
+  const [sizeSelected, setSizeSelected] = useState(0);
+
   // console.log(product.imgUrl);
   // console.log("length review = ", product.length);
 
@@ -15,17 +17,24 @@ function ProductDetails() {
 
   const productReviews = product.reviews.map((r, index) => {
     console.log("review", r.review);
-    return (<div key={index}><b><i>{r.customer}</i></b>:{r.review}</div>)
-  })
+    return (
+      <div key={index}>
+        <b>
+          <i>{r.customer}</i>
+        </b>
+        :{r.review}
+      </div>
+    );
+  });
 
-  console.log("productReviews=" + productReviews)
+  console.log("productReviews=" + productReviews);
 
   const colors = product.color.map((col, index) => {
     let colorStyle = "";
-    if (colorSelected) {
+    if (index == colorSelected) {
       colorStyle = {
         backgroundColor: `${col}`,
-        border: "solid 3px red"
+        border: "solid 3px red",
       };
     } else {
       colorStyle = {
@@ -35,14 +44,33 @@ function ProductDetails() {
     }
 
     console.log(colorStyle);
-    return <div className="color" key={index} style={colorStyle} onClick={(e) => setColorSelected(true)}></div>;
+    return (
+      <div
+        className="color"
+        key={index}
+        style={colorStyle}
+        onClick={(e) => setColorSelected(index)}
+      ></div>
+    );
   });
 
   const sizes = product.size.map((s, index) => {
+    let sizeStyle = {};
+    if (index == sizeSelected) {
+      sizeStyle = {
+        border: "solid 3px red",
+      };
+    }
+    console.log("sizeStyle", sizeStyle);
+
     return (
-      <div className="size" key={index}>
-        {" "}
-        {s}{" "}
+      <div
+        className="size"
+        key={index}
+        style={sizeStyle}
+        onClick={(e) => setSizeSelected(index)}
+      >
+        {s}
       </div>
     );
   });
@@ -99,32 +127,33 @@ function ProductDetails() {
             )}
           </div>
           <div className="order-qty d-flex text-center align-items-center">
-            Quantity: <button onClick={() => setOrderQty(orderQty - 1)}>-</button> <div className="orderQty"> {orderQty} </div> <button onClick={() => setOrderQty(orderQty + 1)}>+</button>
+            Quantity:{" "}
+            <button onClick={() => setOrderQty(orderQty - 1)}>-</button>{" "}
+            <div className="orderQty"> {orderQty} </div>{" "}
+            <button onClick={() => setOrderQty(orderQty + 1)}>+</button>
           </div>
           <div className="button-container d-flex">
-            <button type='button' className="btn-basket-yellow btn-common">
+            <button type="button" className="btn-basket-yellow btn-common">
               Add to cart
             </button>
-            <button type='button' className="btn-basket-yellow btn-common">
+            <button type="button" className="btn-basket-yellow btn-common">
               Buy it now
             </button>
 
-            <button type='button' className="btn-wishlist-white btn-common">
+            <button type="button" className="btn-wishlist-white btn-common">
               <i class="bi bi-heart"></i>
             </button>
           </div>
 
-          <div className="sku">
-            Sku: 01133-9-9
-          </div>
+          <div className="sku">Sku: 01133-9-9</div>
 
           <div className="category">
             Category: 20% off, 49% remote, Alex remote
           </div>
 
-
           <div className="share d-flex gap-3">
-            Share: <i class="bi bi-google"></i><i class="bi bi-facebook"></i> <i class="bi bi-whatsapp"></i>
+            Share: <i class="bi bi-google"></i>
+            <i class="bi bi-facebook"></i> <i class="bi bi-whatsapp"></i>
           </div>
 
           {/* <img src={`../${product.imgUrl}`} alt="" /> */}
@@ -132,10 +161,10 @@ function ProductDetails() {
       </div>
 
       <div className="description-container">
-        <button type='button' className="btn-description btn-common">
+        <button type="button" className="btn-description btn-common">
           Description
         </button>
-        <button type='button' className="btn-reviews btn-common">
+        <button type="button" className="btn-reviews btn-common">
           Reviews
         </button>
       </div>
@@ -151,26 +180,20 @@ function ProductDetails() {
             <span className="space">No reviews</span>
           )}
 
-
           {/* {product.re} */}
           {/* {product.reviews.length > 0 ? (
             <span className="space"> {product.reviews.length} reviews</span>
           ) : (
             <span className="space">No reviews</span>
           )} */}
-
         </div>
-        <button className="write-review-btn">
-          Write a review
-        </button>
+        <button className="write-review-btn">Write a review</button>
       </div>
 
       <div className="related-products container">
         <div className="header">Related Products</div>
-
       </div>
     </div>
-
   );
 }
 
