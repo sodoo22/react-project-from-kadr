@@ -80,7 +80,6 @@ function ProductDetails() {
       <div className="product-details container">
         <div className="img-container">
           <ImageGallery items={product.imgUrl} />
-          {/* <img src={`../image/play.png`} alt="" /> */}
         </div>
 
         <div className="details-container">
@@ -88,10 +87,6 @@ function ProductDetails() {
           <div className="price">${product.price} </div>
           <div className="product-ratings">
             <Rating
-              // onClick={handleRating}
-              // onPointerEnter={onPointerEnter}
-              // onPointerLeave={onPointerLeave}
-              // onPointerMove={onPointerMove}
               initialValue={product.rating}
               allowFraction={true}
               size={35}
@@ -113,7 +108,6 @@ function ProductDetails() {
           <div className="qty">
             {product.quantity > 0 ? (
               <span>
-                {" "}
                 Hurry up! only {product.quantity} product left in stock!
               </span>
             ) : (
@@ -156,7 +150,6 @@ function ProductDetails() {
             <i class="bi bi-facebook"></i> <i class="bi bi-whatsapp"></i>
           </div>
 
-          {/* <img src={`../${product.imgUrl}`} alt="" /> */}
         </div>
       </div>
 
@@ -172,20 +165,12 @@ function ProductDetails() {
       <div className="reviews-container container d-flex flex-column">
         <div className="header">Customer reviews</div>
         <div className="reviews-txt">
-          {/* {productReviews && productReviews} */}
-
           {productReviews != "" ? (
             <span className="space"> {productReviews} </span>
           ) : (
             <span className="space">No reviews</span>
           )}
 
-          {/* {product.re} */}
-          {/* {product.reviews.length > 0 ? (
-            <span className="space"> {product.reviews.length} reviews</span>
-          ) : (
-            <span className="space">No reviews</span>
-          )} */}
         </div>
         <button className="write-review-btn">Write a review</button>
       </div>

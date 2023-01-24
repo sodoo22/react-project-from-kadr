@@ -147,7 +147,7 @@ export default function SearchBar(props) {
             {props.wishlist.length > 0 ? (props.wishlist.map((myWishList, index) => {
               return (
                 <div key={index} className="wishlist-product">
-                  <img src={myWishList.imgUrl} alt="myWishList.title" />
+                  <img src={myWishList.imgUrl[0].original} alt="myWishList.title" />
                   <div>
                     <div>{myWishList.title}</div>
                     <div>${myWishList.price}</div>
@@ -174,22 +174,31 @@ export default function SearchBar(props) {
             {props.basket.length > 0 ?
               (props.basket.map((basket, index) => {
                 return (
-                  <div key={index} className="basket-product">
-                    <img src={basket.imgUrl} alt="basket.title" />
-                    <div>
-                      <div>{basket.title}</div>
-                      <div>${basket.price}</div>
+                  <div>
+                    <div key={index} className="basket-product">
+                      <img src={basket.imgUrl[0].original} alt="basket.title" />
+
+                      <div>
+                        <div>{basket.title}</div>
+                        <div>${basket.price}</div>
+                        <div>Order Qty: {basket.orderQty} pc</div>
+                      </div>
+                      <div>
+                        <a onClick={() => removeFromBasket(basket.id, basket.title, props)}>
+                          <i className="bi bi-x-circle-fill"> </i>
+                        </a>
+                      </div>
+
                     </div>
-                    <div>
-                      <a onClick={() => removeFromBasket(basket.id, basket.title, props)}>
-                        <i className="bi bi-x-circle-fill"> </i>
-                      </a>
-                    </div>
+
                   </div>
                 );
               })) : <div>
                 <h5>Your wishlist is empty</h5>
               </div>}
+            < div className="go-to-cart"> <Link to={"/cart"} state={
+              props.basket
+            }>Сагсруу үсрэх</Link> </div>
           </div>
         )}
 

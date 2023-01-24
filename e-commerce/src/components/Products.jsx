@@ -65,6 +65,10 @@ function Products(props) {
           title: props.title,
           price: props.price,
           imgUrl: props.imgUrl,
+          orderQty: 1,
+          selectedColor: "Color",
+          selectedSize: "Size",
+
         },
       ]);
     }

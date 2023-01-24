@@ -9,6 +9,7 @@ import MainMenu from "./components/MainMenu";
 import SearchBar from "./components/SearchBar";
 import { useState } from "react";
 import ProductDetails from "./components/ProductDetails";
+import Cart from "./components/Cart";
 
 function App() {
   const [wishlist, setWishlist] = useState([]);
@@ -44,6 +45,7 @@ function App() {
             path="/productDetails/:id"
             element={<ProductDetails />}
           ></Route>
+          <Route path="/cart" element={<Cart />}></Route>
         </Routes>
       </div>
     </div>
