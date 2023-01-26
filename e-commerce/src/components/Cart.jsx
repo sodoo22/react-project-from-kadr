@@ -11,7 +11,7 @@ function Cart({ basket, setBasket }) {
     // const [totalSum, letTotalSum] = useState(0);
 
 
-    function removeFromBasket(id, title, product) {
+    function removeFromBasket(id) {
         console.log("--------To remove from Basket ");
         console.log("Basket remove ID = " + id);
         console.log(basket)
@@ -20,6 +20,37 @@ function Cart({ basket, setBasket }) {
 
     function clearCart() {
         setBasket([]);
+    }
+
+    function addQty(id) {
+        console.log("product add qty is clicked" + " id = " + id)
+        setBasket(basket.filter(a => a.id !== id));
+        let updatedProduct = basket.filter(product => product.id === id)
+        console.log("updatedProduct =")
+        console.log(updatedProduct)
+
+
+
+        // setBasket(basket.filter((a) =>
+        //     // console.log(a.id + "!==" + id)
+        //     a.id != id
+        // ));
+        console.log("After removing from array")
+        console.log(basket)
+
+        if (updatedProduct) {
+            setBasket([...basket, {
+                id: updatedProduct[0].id,
+                title: updatedProduct[0].title,
+                price: updatedProduct[0].price,
+                imgUrl: updatedProduct[0].imgUrl,
+                orderQty: updatedProduct[0].orderQty + 1,
+                selectedColor: updatedProduct[0].selectedColor,
+                selectedSize: updatedProduct[0].selectedSize,
+            }]);
+
+        }
+
     }
 
     // useEffect(() => {
@@ -53,6 +84,9 @@ function Cart({ basket, setBasket }) {
                 selectedColor={product.selectedColor}
                 selectedSize={product.selectedSize}
                 removeFromBasket={removeFromBasket}
+                addQty={addQty}
+            // removeQty={removeQty}
+
             // totalSum={totalSum}
             // letTotalSum={letTotalSum}
             />)
@@ -104,8 +138,7 @@ function Cart({ basket, setBasket }) {
                     <div className="p-4">
                         <div className="d-flex justify-content-between" id="subtotal">
                             <p>Subtotal</p>
-                            <p>{console.log(subtotal)}
-                                {parseFloat(subtotal).toFixed(2)}</p>
+                            <p> ${parseFloat(subtotal).toFixed(2)}</p>
 
                             {/* <p>{totalSum}</p> */}
                         </div>
@@ -118,9 +151,9 @@ function Cart({ basket, setBasket }) {
                             <option value="">Country</option>
                             <option value="">Country</option>
                         </select>
-                        <div className="d-flex justify-content-between py-4">
+                        <div className="d-flex justify-content-between py-4" id="subtotal">
                             <p>Total amount</p>
-                            <p>$ 100</p>
+                            <p> ${parseFloat(subtotal).toFixed(2)}</p>
                         </div>
                         <div className="text-center">
                             <button className="btn btn-warning rounded-5 px-4 py-3 text-white">

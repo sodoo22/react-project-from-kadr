@@ -30,7 +30,10 @@ export default function CartDetail(props) {
             <td className="order-qty">
                 <button onClick={() => setOrderQty(orderQty - 1)}>-</button>
                 <span className="orderQty space"> {orderQty} </span>
-                <button onClick={() => setOrderQty(orderQty + 1)}>+</button>
+                <button onClick={() => {
+                    setOrderQty(orderQty + 1)
+                    product.addQty(product.id)
+                }}>+</button>
             </td>
             <td>${parseFloat(product.price * orderQty).toFixed(2)}</td>
             <td><div>
