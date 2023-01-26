@@ -14,19 +14,14 @@ export default function SearchBar(props) {
     icon: <i class="bi bi-trash3"></i>
   });
 
+  function clearCart() {
+    props.setBasket([]);
+  }
 
+  function clearWishlist() {
+    props.setWishlist([]);
+  }
 
-  // function handleBasket() {
-  //   if (props.basket.length > 0) {
-  //     let basket = document.getElementById("basket-container");
-
-  //     if (basket.style.display != "block") {
-  //       basket.style.display = "block";
-  //     } else {
-  //       basket.style.display = "none";
-  //     }
-  //   }
-  // }
 
   function removeFromBasket(id, title, props) {
     console.log("--------To remove from Basket ");
@@ -40,18 +35,6 @@ export default function SearchBar(props) {
   console.log(props.wishlist)
 
 
-  // function handleWishlist() {
-  //   if (props.wishlist.length > 0) {
-  //     let wishlist = document.getElementById("wishlist-container");
-
-  //     if (wishlist.style.display != "block") {
-  //       wishlist.style.display = "block";
-  //     } else {
-  //       wishlist.style.display = "none";
-  //     }
-  //   }
-  // }
-
   console.log("Basket array = ")
   console.log(props.basket)
 
@@ -64,27 +47,13 @@ export default function SearchBar(props) {
   }
 
 
-
-  // function closeWishlist() {
-  //   if (props.wishlist.length > 0) {
-  //     // let wishlist = document.getElementById("wishlist-container");
-  //     // wishlist.style.display = "none";
-  //   }
-  // }
-
-  // function closeBasket() {
-  //   if (props.basket.length > 0) {
-  //     let basket = document.getElementById("basket-container");
-  //     basket.style.display = "none";
-  //   }
-  // }
-
   return (
     <div className="searchbar-container">
       <div className="container">
         <div className="row xx">
           <div className="logo-container col-4 col-md-3">
-            <img src="image/content/logo1.png" alt="" />
+
+            <Link to={'/'}><img src="image/content/logo1.png" alt="" /></Link>
           </div>
 
           <div className="col-6 col-md-4 d-none d-md-block">
@@ -142,7 +111,10 @@ export default function SearchBar(props) {
         {showWish && (
           <div id="wishlist-container">
             <a onClick={() => setShowWish(false)}><i className="bi bi-x-circle-fill close-btn"> </i></a>
-            <h4>My wishlist</h4>
+            <div className="wishlist-header d-flex justify-content-between">
+              <h4>Таны Wishlist</h4>
+              <button className="btn btn-warning" onClick={() => { clearWishlist() }}>Хоослох</button>
+            </div>
 
             {props.wishlist.length > 0 ? (props.wishlist.map((myWishList, index) => {
               return (
@@ -160,7 +132,7 @@ export default function SearchBar(props) {
                 </div>
               );
             })) : <div>
-              <h5>Your wishlist is empty</h5>
+              <h5>Таны wishlist хоосон байна</h5>
             </div>}
           </div>
         )}
@@ -168,7 +140,10 @@ export default function SearchBar(props) {
         {showBasket && (
           <div id="basket-container">
             <a onClick={() => setShowBasket(false)}><i className="bi bi-x-circle-fill close-btn"> </i></a>
-            <h4>My basket</h4>
+            <div className="basket-header d-flex justify-content-between">
+              <h4>Таны сагс</h4>
+              <button className="btn btn-warning" onClick={() => { clearCart() }}>Хоослох</button>
+            </div>
 
 
             {props.basket.length > 0 ?
@@ -194,11 +169,9 @@ export default function SearchBar(props) {
                   </div>
                 );
               })) : <div>
-                <h5>Your wishlist is empty</h5>
+                <h5>Таны сагс хоосон байна</h5>
               </div>}
-            < div className="go-to-cart"> <Link to={"/cart"} state={
-              props.basket
-            }>Сагсруу үсрэх</Link> </div>
+            < div className="go-to-cart"> <Link to={"/cart"}> <button className="btn btn-warning" id='go-to-basket-button'>Сагсруу үсрэх</button> </Link> </div>
           </div>
         )}
 

@@ -1,14 +1,23 @@
+import { useEffect } from "react";
 import { useState } from "react";
 
 export default function CartDetail(props) {
+
+
+
     let product = props;
+    // useEffect(() => {
+    //     props.letTotalSum(props.totalSum + (product.price * product.orderQty));
+    // }, [])
+
+
     const [orderQty, setOrderQty] = useState(product.orderQty);
     return (
 
         <tr>
-            <th scope="row">{product.counter + 1}</th>
+            <td scope="row">{product.counter + 1}</td>
             <td className="d-flex">
-                <div className="d-flex">
+                <div className="d-flex gap-4">
                     <div className="img"><img src={product.imgUrl[0].original} alt="myWishList.title" /></div>
                     <div className="d-flex flex-column">
                         <div className="title">{product.title}</div>
@@ -23,7 +32,12 @@ export default function CartDetail(props) {
                 <span className="orderQty space"> {orderQty} </span>
                 <button onClick={() => setOrderQty(orderQty + 1)}>+</button>
             </td>
-            <td>dfsf</td>
+            <td>${parseFloat(product.price * orderQty).toFixed(2)}</td>
+            <td><div>
+                <a onClick={() => product.removeFromBasket(product.id, product.title)}>
+                    <i className="bi bi-x-circle-fill"> </i>
+                </a>
+            </div></td>
         </tr>
 
     )

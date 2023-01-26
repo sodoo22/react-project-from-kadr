@@ -45,7 +45,9 @@ function App() {
             path="/productDetails/:id"
             element={<ProductDetails />}
           ></Route>
-          <Route path="/cart" element={<Cart />}></Route>
+          <Route path="/cart" element={<Cart
+            basket={basket}
+            setBasket={setBasket} />}></Route>
         </Routes>
       </div>
     </div>
