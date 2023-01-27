@@ -19,34 +19,6 @@ function Cart({ basket, setBasket }) {
     setBasket([]);
   }
 
-  // function addQty(id) {
-  //     console.log("product add qty is clicked" + " id = " + id)
-  //     setBasket(basket.filter(a => a.id !== id));
-  //     let updatedProduct = basket.filter(product => product.id === id)
-  //     console.log("updatedProduct =")
-  //     console.log(updatedProduct)
-
-  //     // setBasket(basket.filter((a) =>
-  //     //     // console.log(a.id + "!==" + id)
-  //     //     a.id != id
-  //     // ));
-  //     console.log("After removing from array")
-  //     console.log(basket)
-
-  //     if (updatedProduct) {
-  //         setBasket([...basket, {
-  //             id: updatedProduct[0].id,
-  //             title: updatedProduct[0].title,
-  //             price: updatedProduct[0].price,
-  //             imgUrl: updatedProduct[0].imgUrl,
-  //             orderQty: updatedProduct[0].orderQty + 1,
-  //             selectedColor: updatedProduct[0].selectedColor,
-  //             selectedSize: updatedProduct[0].selectedSize,
-  //         }]);
-
-  //     }
-  // }
-
   function addQty(id, operation) {
     let remove = false;
     console.log("product add qty is clicked" + " id = " + id);
@@ -82,18 +54,6 @@ function Cart({ basket, setBasket }) {
     }
     console.log("After removing from array");
   }
-
-  // useEffect(() => {
-  //     basket.map((product, index) => {
-  //         letTotalSum(totalSum + (product.price * product.orderQty))
-  //         console.log("totalSum = " + totalSum);
-  //     })
-  // }, [basket])
-
-  // const subtotal = basket.map((product, index) => {
-  //     letTotalSum(totalSum + (product.price * product.orderQty))
-  //     console.log("totalSum = " + totalSum);
-  // })
 
   const subtotal = basket.reduce(
     (prevValue, currentValue) =>
