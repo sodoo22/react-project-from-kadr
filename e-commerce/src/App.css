@@ -344,6 +344,7 @@ Navbar {}
 
 .title {
   color: #003f62;
+  text-decoration: none;
 }
 
 .part2 .title {

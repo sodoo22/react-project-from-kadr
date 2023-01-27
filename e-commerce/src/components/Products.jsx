@@ -179,7 +179,6 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
               quantity: props.quantity,
               color: props.color,
               size: props.size
-
             }}
           >
             <div className="title">
@@ -225,17 +224,8 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
             </div>
           )}
 
-          {/* <div className="basket-icon text-center text-light">
-            <a onClick={() => { basket(props); }}>
-              <i className="bi bi-cart3"></i>
-            </a>
-          </div> */}
         </div>
       </div>
-
-      {/* <Button variant="primary" onClick={handleShow}>
-                Launch demo modal
-            </Button> */}
 
       <Modal show={props.show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -245,7 +235,6 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
           {props.id}
           {props.title}
           {props.imgUrl}
-          {/* <img src={props.imgUrl} alt="product Image" /> */}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
