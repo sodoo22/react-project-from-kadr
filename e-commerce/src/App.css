@@ -83,6 +83,10 @@ Navbar {}
   padding: 5px;
 }
 
+.space-3px {
+  padding: 3px;
+}
+
 .signin,
 .favorite,
 .basket {
@@ -203,7 +207,7 @@ Navbar {}
   padding: 10px;
   border: 1px solid #ddd;
   width: 250px;
-  height: 250px;
+  height: 260px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -248,8 +252,8 @@ Navbar {}
   width: 30px;
   height: 30px;
   position: absolute;
-  right: 10px;
-  bottom: 0px;
+  right: 20px;
+  bottom: 20px;
   /* padding: 50px; */
   border-radius: 15px;
   background-color: #eda415;
@@ -259,8 +263,8 @@ Navbar {}
   width: 60px;
   height: 30px;
   position: absolute;
-  right: 10px;
-  bottom: 0px;
+  right: 20px;
+  bottom: 20px;
   border-radius: 15px;
   background-color: green;
 }
@@ -349,6 +353,10 @@ Navbar {}
 
 .part2 .title {
   font-size: 21px;
+}
+
+.product-text a {
+  text-decoration: none;
 }
 
 .price {}
@@ -550,13 +558,13 @@ Navbar {}
 }
 
 .product-details .img-container {
-  width: 50%;
+  width: 40%;
 }
 
 .product-details .details-container {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 60%;
   padding: 0 48px;
 }
 
@@ -675,6 +683,10 @@ Navbar {}
   border: none;
   color: #ffffff;
   margin-right: 20px;
+}
+
+.red {
+  background-color: red;
 }
 
 .btn-wishlist-white {
@@ -908,5 +920,13 @@ th {
 #subtotal {
   font-weight: 500;
   color: #232323;
+}
 
+
+#review {
+  padding-bottom: 10px;
+}
+
+Link {
+  text-decoration: none;
 }

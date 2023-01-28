@@ -61,6 +61,7 @@ function Home({ wishlist, setWishlist, basket, setBasket }) {
                         setWishlist={setWishlist}
                         basket={basket}
                         setBasket={setBasket}
+                        description={data.description}
                     />
                 );
             }

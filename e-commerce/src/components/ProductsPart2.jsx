@@ -18,6 +18,7 @@ function ProductsPart2(props) {
         if (index < 2) {
             return (
                 <ProductsPart3
+                    index={index}
                     id={data.id}
                     title={data.title}
                     imgUrl={data.imgUrl}

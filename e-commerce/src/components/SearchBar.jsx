@@ -157,6 +157,8 @@ export default function SearchBar(props) {
                         <div>{basket.title}</div>
                         <div>${basket.price}</div>
                         <div>Order Qty: {basket.orderQty} pc</div>
+                        <div>Color: {basket.selectedColor}</div>
+                        <div>Size: {basket.selectedSize}</div>
                       </div>
                       <div>
                         <a onClick={() => removeFromBasket(basket.id, basket.title, props)}>

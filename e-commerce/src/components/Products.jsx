@@ -16,10 +16,12 @@ function Products(props) {
     toast.success(props.title + "-г сагсанд амжилттай нэмлээ.! ", {
       icon: <i class="bi bi-cart-check"></i>,
     });
+
   const notifyWishlistAdd = () =>
     toast.success(props.title + "-г Wislist-д амжилттай нэмлээ.! ", {
       icon: <i class="bi bi-heart"></i>,
     });
+
   const notifyBasketRemove = () =>
     toast.error(props.title + "-г сагснаас амжилттай устгалаа.! ", {
       icon: <i class="bi bi-trash3"></i>,
@@ -36,7 +38,7 @@ function Products(props) {
   //   // other logic
   // };
 
-  console.log("Product review ===" + props.reviews.length)
+  // console.log("Product review ===" + props.reviews.length)
 
   //  Сагсанд хийх function
   function basket(props) {
@@ -66,8 +68,8 @@ function Products(props) {
           price: props.price,
           imgUrl: props.imgUrl,
           orderQty: 1,
-          selectedColor: "Color",
-          selectedSize: "Size",
+          selectedColor: props.color[0],
+          selectedSize: props.size[0],
 
         },
       ]);
@@ -171,6 +173,7 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
           <Link
             to={`/productDetails/${props.id}`}
             state={{
+              id: props.id,
               title: props.title,
               price: props.price,
               imgUrl: props.imgUrl,
@@ -178,12 +181,13 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
               reviews: props.reviews,
               quantity: props.quantity,
               color: props.color,
-              size: props.size
+              size: props.size,
+              description: props.description,
             }}
           >
             <div className="title">
-              {props.id}. <span className="space"></span>
-              {props.title}
+              {props.title} <br /> Product Code: <span className="space-3px"></span> {props.id}
+
             </div>
           </Link>
 
@@ -202,31 +206,33 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
             />
           </div>
 
-          {inBasket(props.id) ? (
-            <div className="basket-icon-green text-center text-light ">
-              <a
-                onClick={() => {
-                  basket(props);
-                }}
-              >
-                <i className="bi bi-cart3"></i>
-              </a>
-            </div>
-          ) : (
-            <div className="basket-icon text-center text-light">
-              <a
-                onClick={() => {
-                  basket(props);
-                }}
-              >
-                <i className="bi bi-cart3"></i>
-              </a>
-            </div>
-          )}
+
 
         </div>
+
       </div>
 
+      {inBasket(props.id) ? (
+        <div className="basket-icon-green text-center text-light ">
+          <a
+            onClick={() => {
+              basket(props);
+            }}
+          >
+            <i className="bi bi-cart3"></i>
+          </a>
+        </div>
+      ) : (
+        <div className="basket-icon text-center text-light">
+          <a
+            onClick={() => {
+              basket(props);
+            }}
+          >
+            <i className="bi bi-cart3"></i>
+          </a>
+        </div>
+      )}
       <Modal show={props.show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>

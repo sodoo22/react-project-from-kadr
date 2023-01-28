@@ -1,3 +1,4 @@
+// ,
 // {
 //     original: '',
 //     thumbnail: ''
@@ -7,13 +8,29 @@ const products = [
   {
     id: 1,
     title: "Camera",
+    description: [
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "4K Motion JPEG video (DCI cinema-type 4096 x 2160) at 30p or 24p; in-camera still frame grab* of 4K 8.8-Megapixel images; multiple video options include Full HD up to 60p, and HD up to 120p.",
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "4K Motion JPEG video (DCI cinema-type 4096 x 2160) at 30p or 24p; in-camera still frame grab* of 4K 8.8-Megapixel images; multiple video options include Full HD up to 60p, and HD up to 120p.",
+    ],
     imgUrl: [
       {
-        original: "../image/camera3.png",
-        thumbnail: "../image/camera3.png",
+        original: "https://s7d1.scene7.com/is/image/canon/1483C082_eos-5d-mark-iv-with-canon-log_3?fmt=webp-alpha&wid=600",
+        thumbnail: "https://s7d1.scene7.com/is/image/canon/1483C082_eos-5d-mark-iv-with-canon-log_3?fmt=webp-alpha&wid=200",
+      },
+      {
+        original: 'https://s7d1.scene7.com/is/image/canon/1483C082_eos-5d-mark-iv-with-canon-log_primary?fmt=webp-alpha&wid=600',
+        thumbnail: 'https://s7d1.scene7.com/is/image/canon/1483C082_eos-5d-mark-iv-with-canon-log_primary?fmt=webp-alpha&wid=200'
+      },
+      ,
+      {
+        original: 'https://s7d1.scene7.com/is/image/canon/1483C082_eos-5d-mark-iv-with-canon-log_2?fmt=webp-alpha&wid=600',
+        thumbnail: 'https://s7d1.scene7.com/is/image/canon/1483C082_eos-5d-mark-iv-with-canon-log_2?fmt=webp-alpha&wid=200'
       },
     ],
-    price: 11.7,
+    price: 2599,
     rating: 5,
     reviews: [
       {
@@ -22,7 +39,14 @@ const products = [
       },
       {
         customer: "Kevin",
-        review: "Loved this product",
+        review: "I bought a brand new Canon 5D Mark IV with Canon Log and after a month of using it the body is now dead. It does not turn on. So frustrated and disappointed.",
+      },
+      {
+        customer: "Jonny",
+        review: `Big Upgrade!!
+        I'm not a photographer nor a videographer but when googling the best camera for shooting music videos, the 5D4 Mark IV immediately popped up. Without having any prior knowledge or experience on this camera, I began doing my very intensive research on this product.
+        As a current owner of a Canon XA10, the 5D4 is a great upgrade!
+        I've only been interested in recording great cinematic videos & had no knowledge of the little things that you should take account of when seeking to produce great quality videos using this camera.`,
       },
     ],
     quantity: 4,
@@ -32,6 +56,11 @@ const products = [
   {
     id: 2,
     title: "Wireless headphones",
+    description: [
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "4K Motion JPEG video (DCI cinema-type 4096 x 2160) at 30p or 24p; in-camera still frame grab* of 4K 8.8-Megapixel images; multiple video options include Full HD up to 60p, and HD up to 120p.",
+    ],
     imgUrl: [
       {
         original:
@@ -88,6 +117,11 @@ const products = [
   {
     id: 3,
     title: "Macbook Air",
+    description: [
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "4K Motion JPEG video (DCI cinema-type 4096 x 2160) at 30p or 24p; in-camera still frame grab* of 4K 8.8-Megapixel images; multiple video options include Full HD up to 60p, and HD up to 120p.",
+    ],
     imgUrl: [
       {
         original: "../image/macbook5.png",
@@ -104,6 +138,11 @@ const products = [
   {
     id: 4,
     title: "Play game",
+    description: [
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "4K Motion JPEG video (DCI cinema-type 4096 x 2160) at 30p or 24p; in-camera still frame grab* of 4K 8.8-Megapixel images; multiple video options include Full HD up to 60p, and HD up to 120p.",
+    ],
     imgUrl: [
       {
         original: "../image/play-green.png",
@@ -133,6 +172,11 @@ const products = [
   {
     id: 5,
     title: "iWatch",
+    description: [
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "4K Motion JPEG video (DCI cinema-type 4096 x 2160) at 30p or 24p; in-camera still frame grab* of 4K 8.8-Megapixel images; multiple video options include Full HD up to 60p, and HD up to 120p.",
+    ],
     imgUrl: [
       {
         original: "../image/iwatch.jpg",
@@ -149,6 +193,11 @@ const products = [
   {
     id: 6,
     title: "Tablet as a laptop",
+    description: [
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "4K Motion JPEG video (DCI cinema-type 4096 x 2160) at 30p or 24p; in-camera still frame grab* of 4K 8.8-Megapixel images; multiple video options include Full HD up to 60p, and HD up to 120p.",
+    ],
     imgUrl: [
       {
         original: "../image/notebook.png",
@@ -165,6 +214,11 @@ const products = [
   {
     id: 7,
     title: "Wireless headphones SBD500",
+    description: [
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "4K Motion JPEG video (DCI cinema-type 4096 x 2160) at 30p or 24p; in-camera still frame grab* of 4K 8.8-Megapixel images; multiple video options include Full HD up to 60p, and HD up to 120p.",
+    ],
     imgUrl: [
       {
         original:
@@ -207,6 +261,11 @@ const products = [
   {
     id: 8,
     title: "MOMENTUM True Wireless 3",
+    description: [
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "4K Motion JPEG video (DCI cinema-type 4096 x 2160) at 30p or 24p; in-camera still frame grab* of 4K 8.8-Megapixel images; multiple video options include Full HD up to 60p, and HD up to 120p.",
+    ],
     imgUrl: [
       {
         original:
@@ -261,6 +320,11 @@ const products = [
   {
     id: 9,
     title: "Macbook Air",
+    description: [
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "4K Motion JPEG video (DCI cinema-type 4096 x 2160) at 30p or 24p; in-camera still frame grab* of 4K 8.8-Megapixel images; multiple video options include Full HD up to 60p, and HD up to 120p.",
+    ],
     imgUrl: [
       {
         original: "../image/macbook.jpg",
@@ -278,6 +342,11 @@ const products = [
   {
     id: 10,
     title: "Camera",
+    description: [
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "4K Motion JPEG video (DCI cinema-type 4096 x 2160) at 30p or 24p; in-camera still frame grab* of 4K 8.8-Megapixel images; multiple video options include Full HD up to 60p, and HD up to 120p.",
+    ],
     imgUrl: [
       {
         original: "../image/camera3.png",
@@ -294,6 +363,11 @@ const products = [
   {
     id: 11,
     title: "iWatch",
+    description: [
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "4K Motion JPEG video (DCI cinema-type 4096 x 2160) at 30p or 24p; in-camera still frame grab* of 4K 8.8-Megapixel images; multiple video options include Full HD up to 60p, and HD up to 120p.",
+    ],
     imgUrl: [
       {
         original: "../image/iwatch.jpg",
@@ -310,6 +384,11 @@ const products = [
   {
     id: 12,
     title: "Play game",
+    description: [
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "4K Motion JPEG video (DCI cinema-type 4096 x 2160) at 30p or 24p; in-camera still frame grab* of 4K 8.8-Megapixel images; multiple video options include Full HD up to 60p, and HD up to 120p.",
+    ],
     imgUrl: [
       {
         original: "../image/play.png",
@@ -326,6 +405,11 @@ const products = [
   {
     id: 13,
     title: "Wireless headphones",
+    description: [
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "4K Motion JPEG video (DCI cinema-type 4096 x 2160) at 30p or 24p; in-camera still frame grab* of 4K 8.8-Megapixel images; multiple video options include Full HD up to 60p, and HD up to 120p.",
+    ],
     imgUrl: [
       {
         original: "../image/headset.png",
@@ -342,6 +426,11 @@ const products = [
   {
     id: 14,
     title: "Tablet as a laptop",
+    description: [
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "4K Motion JPEG video (DCI cinema-type 4096 x 2160) at 30p or 24p; in-camera still frame grab* of 4K 8.8-Megapixel images; multiple video options include Full HD up to 60p, and HD up to 120p.",
+    ],
     imgUrl: [
       {
         original: "../image/notebook.png",
@@ -358,6 +447,11 @@ const products = [
   {
     id: 15,
     title: "Wireless headphones",
+    description: [
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "4K Motion JPEG video (DCI cinema-type 4096 x 2160) at 30p or 24p; in-camera still frame grab* of 4K 8.8-Megapixel images; multiple video options include Full HD up to 60p, and HD up to 120p.",
+    ],
     imgUrl: [
       {
         original:
@@ -406,6 +500,11 @@ const products = [
   {
     id: 16,
     title: "Wireless headphones",
+    description: [
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "4K Motion JPEG video (DCI cinema-type 4096 x 2160) at 30p or 24p; in-camera still frame grab* of 4K 8.8-Megapixel images; multiple video options include Full HD up to 60p, and HD up to 120p.",
+    ],
     imgUrl: [
       {
         original: "../image/headset.png",
@@ -422,6 +521,11 @@ const products = [
   {
     id: 17,
     title: "iWatch Ultra 2040",
+    description: [
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "New 30.4 Megapixel full-frame CMOS sensor for versatile shooting in nearly any light, with ISO range 100-32000; expandable up to 50-102400 (equivalent ISO).",
+      "4K Motion JPEG video (DCI cinema-type 4096 x 2160) at 30p or 24p; in-camera still frame grab* of 4K 8.8-Megapixel images; multiple video options include Full HD up to 60p, and HD up to 120p.",
+    ],
     imgUrl: [
       {
         original: "../image/iwatch.jpg",

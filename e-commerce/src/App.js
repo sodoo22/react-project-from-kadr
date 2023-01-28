@@ -43,7 +43,9 @@ function App() {
           <Route path="/signup" element={<Signup />}></Route>
           <Route
             path="/productDetails/:id"
-            element={<ProductDetails />}
+            element={<ProductDetails
+              basket={basket}
+              setBasket={setBasket} />}
           ></Route>
           <Route path="/cart" element={<Cart
             basket={basket}

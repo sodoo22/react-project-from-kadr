@@ -25,7 +25,7 @@ function ProductsPart3(props) {
 
 
     return (
-        <div className="product-card part2 d-flex flex-row" style={props.containerStyle}>
+        <div className="product-card part2 d-flex flex-row" style={props.containerStyle} key={props.index}>
             <div className="product-img-container part2-img-container" style={{ height: "120px" }}>
                 <img src={props.imgUrl} alt="image" />
             </div>
