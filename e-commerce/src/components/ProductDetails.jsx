@@ -1,3 +1,4 @@
+import { Link, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import ImageGallery from "react-image-gallery";
 import { useLocation } from "react-router-dom";
@@ -25,6 +26,17 @@ function ProductDetails(props) {
 
   const notifyBasketRemove = () =>
     toast.error(product.title + "-г сагснаас амжилттай устгалаа.! ", {
+      icon: <i class="bi bi-trash3"></i>,
+    });
+
+
+  const notifyWishlistAdd = () =>
+    toast.success(product.title + "-г Wislist-д амжилттай нэмлээ.! ", {
+      icon: <i class="bi bi-heart"></i>,
+    });
+
+  const notifyWishlistRemove = () =>
+    toast.error(product.title + "-г Wislist-ээс амжилттай устгалаа .! ", {
       icon: <i class="bi bi-trash3"></i>,
     });
 
@@ -89,6 +101,60 @@ function ProductDetails(props) {
     });
     return result; // утгаа буцаая
   }
+
+
+  // Wishlist-д нэмэх function
+  function addToWishlist(props) {
+    console.log("added to Wishlist ---->  ID = " + product.id);
+
+    let wishlistQty = props.wishlist.length; // Wishlist-ийн хэмжээг хадгалах
+    let isAdded = false;
+
+    if (wishlistQty > 0) {
+      props.wishlist.map((a, index) => {
+        if (a.id == product.id) {
+          isAdded = true; // Уг бараа нь Wishlist-д олдвол True болгож өөрчлөнө
+        }
+      });
+      if (isAdded) {
+        notifyWishlistRemove();
+        props.setWishlist(props.wishlist.filter((a) => a.id !== product.id));
+      }
+    }
+
+    if (isAdded == false) {
+      // хэрэв уг барааг нэмээгүй байсан бол Array-руу нэмнэ.
+      notifyWishlistAdd();
+      props.setWishlist([
+        ...props.wishlist,
+        {
+          id: product.id,
+          title: product.title,
+          price: product.price,
+          imgUrl: product.imgUrl,
+        },
+      ]);
+    }
+  }
+
+  // Уг функц нь өгөдсөн ID бүхий бүтээгдэхүүн байгаа эсэхийг Wishlist array-гаас шалгана.
+  // Буцаах утга нь Boolean (true or false)
+  // Олдсон үед --> Тrue
+  // Олдоогүй үед --> False
+  function inWishlist(id) {
+    let result = false; // анхны утгыг False гэж зарлаж байна. Олдоогүй үед автоматаар FALSE буцна.
+    console.log("ID ----> " + id)
+    console.log(props.wishlist, "props.wishlist")
+    props.wishlist.map((a) => {
+      if (a.id == id) {
+        console.log("Олчихлоо зүрх нь ----> УЛААН ")
+        result = true; // олдчихвол утгаа TRUE болгоё.
+        console.log("Result = " + result)
+      }
+    });
+    return result; // утгаа буцаая
+  }
+
 
   // color render хийх function
   const colors = product.color.map((col, index) => {
@@ -201,13 +267,23 @@ function ProductDetails(props) {
               Add to cart
             </button>)}
 
-            <button type="button" className="btn-basket-yellow btn-common">
-              Buy it now
+
+            <button type="button" className="btn-basket-yellow btn-common text-decoration-none" onClick={() => {
+              addToBasket(props)
+            }} >
+              <Link to={"/cart"}>
+                Buy it now
+              </Link>
             </button>
 
-            <button type="button" className="btn-wishlist-white btn-common">
-              <i class="bi bi-heart"></i>
+
+            <button type="button" className="btn-wishlist-white btn-common " onClick={() => {
+              addToWishlist(props);
+            }}>
+              <i class="bi bi-heart-fill" style={{ color: inWishlist(product.id) ? "red" : "gray" }}></i>
             </button>
+
+
           </div>
 
           <div className="sku">Sku: 01133-9-9</div>

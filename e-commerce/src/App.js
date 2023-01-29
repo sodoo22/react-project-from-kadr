@@ -44,6 +44,8 @@ function App() {
           <Route
             path="/productDetails/:id"
             element={<ProductDetails
+              wishlist={wishlist}
+              setWishlist={setWishlist}
               basket={basket}
               setBasket={setBasket} />}
           ></Route>

@@ -28,8 +28,8 @@
 
 .close-btn {
   position: absolute;
-  right: 0;
-  top: -10px;
+  right: -10px;
+  top: -15px;
   color: red;
   font-size: 25px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -65,8 +65,6 @@
   top: 160px;
   /* width: auto; */
 }
-
-Navbar {}
 
 .logo-container {
   width: 140px;
@@ -255,6 +253,7 @@ Navbar {}
   right: 20px;
   bottom: 20px;
   /* padding: 50px; */
+  padding-top: 3px;
   border-radius: 15px;
   background-color: #eda415;
 }
@@ -265,6 +264,7 @@ Navbar {}
   position: absolute;
   right: 20px;
   bottom: 20px;
+  padding-top: 3px;
   border-radius: 15px;
   background-color: green;
 }
@@ -373,7 +373,7 @@ Navbar {}
 .btn-basket {
   background-color: #87bcd9;
   border-radius: 20px;
-  width: 205px;
+  width: 215px;
   height: 60px;
   font-size: 16px;
   display: flex;
@@ -382,6 +382,10 @@ Navbar {}
   padding: 18px 25px;
   border: none;
   margin-top: 37px;
+}
+
+.added {
+  background-color: rgb(255, 161, 132);
 }
 
 /* Service part */
@@ -425,8 +429,8 @@ Navbar {}
 }
 
 .wishlist-heart {
-  left: 20px;
-  top: 20px;
+  right: 15px;
+  top: 10px;
   z-index: 100;
 }
 
@@ -705,6 +709,12 @@ Navbar {}
 .product-details .button-container {
   border-bottom: 1px solid #ddd;
   padding-bottom: 25px;
+}
+
+.product-details .button-container a,
+.continue-shopping a {
+  text-decoration: none;
+  color: white;
 }
 
 .product-details .sku {

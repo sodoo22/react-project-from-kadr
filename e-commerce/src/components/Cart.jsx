@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CartDetail from "./CartDetail";
 
 function Cart({ basket, setBasket }) {
@@ -74,10 +75,10 @@ function Cart({ basket, setBasket }) {
         selectedSize={product.selectedSize}
         removeFromBasket={removeFromBasket}
         addQty={addQty}
-        // removeQty={removeQty}
+      // removeQty={removeQty}
 
-        // totalSum={totalSum}
-        // letTotalSum={letTotalSum}
+      // totalSum={totalSum}
+      // letTotalSum={letTotalSum}
       />
     );
   });
@@ -106,8 +107,11 @@ function Cart({ basket, setBasket }) {
             </tbody>
           </table>
           <div className="d-flex justify-content-between py-4">
-            <button className="btn btn-warning rounded-5 px-4 py-3 text-white">
-              Continue shopping
+            <button className="btn btn-warning rounded-5 px-4 py-3 text-white continue-shopping">
+
+              <Link to={"/"}>
+                Continue shopping
+              </Link>
             </button>
             <button className="btn btn-outline-secondary rounded-5 px-5 py-3 ">
               Update cart

@@ -144,7 +144,7 @@ function Products(props) {
 
   return (
     <div className="product-card position-relative">
-      <div className="wishlist-heart d-flex justify-content-end  position-absolute fs-3">
+      <div className="wishlist-heart d-flex justify-content-end  position-absolute fs-4">
         <a
           onClick={() => {
             addToWishlist(props);
@@ -160,7 +160,7 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
 */}
           <i
             className="bi bi-heart-fill"
-            style={{ color: inWishlist(props.id) ? "red" : "black" }}
+            style={{ color: inWishlist(props.id) ? "red" : "gray" }}
           ></i>
         </a>
       </div>

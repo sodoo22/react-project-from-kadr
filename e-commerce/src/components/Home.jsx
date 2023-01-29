@@ -79,8 +79,17 @@ function Home({ wishlist, setWishlist, basket, setBasket }) {
                     imgUrl={data.imgUrl}
                     price={data.price}
                     rating={data.rating}
+                    reviews={data.reviews}
+                    quantity={data.quantity}
+                    color={data.color}
+                    size={data.size}
                     show={show}
                     setShow={setShow}
+                    wishlist={wishlist}
+                    setWishlist={setWishlist}
+                    basket={basket}
+                    setBasket={setBasket}
+                    description={data.description}
                 />
             );
         }

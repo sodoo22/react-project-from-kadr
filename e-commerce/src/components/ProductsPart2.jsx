@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Rating } from 'react-simple-star-rating'
 import ProductsPart3 from './ProductsPart3';
 import productsData from '../data/products';
+import { ToastContainer, toast } from "react-toastify";
 
 function ProductsPart2(props) {
 
@@ -12,7 +13,15 @@ function ProductsPart2(props) {
         height: "240px"
     }
 
+    const notifyBasketAdd = () =>
+        toast.success(props.title + "-г сагсанд амжилттай нэмлээ.! ", {
+            icon: <i class="bi bi-cart-check"></i>,
+        });
 
+    const notifyBasketRemove = () =>
+        toast.error(props.title + "-г сагснаас амжилттай устгалаа.! ", {
+            icon: <i class="bi bi-trash3"></i>,
+        });
 
     const products = productsData.map((data, index) => {
         if (index < 2) {
@@ -41,9 +50,50 @@ function ProductsPart2(props) {
     const onPointerLeave = () => console.log('Leave')
     const onPointerMove = (value, index) => console.log(value, index)
 
-    function addToBasket(props) {
-        console.log("added to basket");
-        console.log(props.id)
+    //  Сагсанд хийх function
+    function basket(props) {
+        console.log("added to Basket ---->  ID = " + props.id);
+        let basketQty = props.basket.length;
+        let isAdded = false;
+
+        if (basketQty > 0) {
+            props.basket.map((a, index) => {
+                if (a.id == props.id) {
+                    isAdded = true;
+                }
+            });
+            if (isAdded) {
+                notifyBasketRemove();
+                props.setBasket(props.basket.filter((a) => a.id !== props.id));
+            }
+        }
+
+        if (isAdded == false) {
+            notifyBasketAdd();
+            props.setBasket([
+                ...props.basket,
+                {
+                    id: props.id,
+                    title: props.title,
+                    price: props.price,
+                    imgUrl: props.imgUrl,
+                    orderQty: 1,
+                    selectedColor: props.color[0],
+                    selectedSize: props.size[0],
+
+                },
+            ]);
+        }
+    }
+
+    function inBasket(id) {
+        let result = false;
+        props.basket.map((a) => {
+            if (a.id == id) {
+                result = true;
+            }
+        });
+        return result; // утгаа буцаая
     }
 
 
@@ -51,7 +101,7 @@ function ProductsPart2(props) {
         <div className='d-flex'>
             <div className="product-card part2 d-flex flex-row" >
                 <div className="product-img-container part2-img-container">
-                    <img className='ms-3' src={props.imgUrl} alt="image" />
+                    <img className='ms-3' src={props.imgUrl[0].original} alt="image" />
                 </div>
                 <div className="product-text">
                     <div className="title">{props.title}</div>
@@ -67,14 +117,21 @@ function ProductsPart2(props) {
                             size={15}
                         />
                     </div>
-                    <button type='button' className="btn-basket">
-                        <div className="btn-text">Add to cart
+
+
+                    <button type='button' className={inBasket(props.id) ? "btn-basket added" : "btn-basket"} onClick={() => {
+                        basket(props);
+                    }}>
+                        <div className="btn-text"> {inBasket(props.id) ? <span>Remove from cart</span> : <span>Add to cart</span>}
                         </div>
                         <div className="basket-icon2 text-center text-light">
-                            <a onClick={() => { addToBasket(props) }}><i class="bi bi-cart3"></i>
-                            </a>
+                            <i class="bi bi-cart3"></i>
+
                         </div>
                     </button>
+
+
+
                 </div>
             </div>
 
