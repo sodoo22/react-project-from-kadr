@@ -38,6 +38,7 @@ function Home({ wishlist, setWishlist, basket, setBasket }) {
   });
 
   console.log(popularCategory);
+  console.log(popularCategory);
 
   const popProducts = popularCategory.map((data) => {
     return (
