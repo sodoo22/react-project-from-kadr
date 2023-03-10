@@ -29,7 +29,7 @@ function Home({ wishlist, setWishlist, basket, setBasket }) {
   const [popularCategory, setPopularCategory] = useState([]);
 
   const POPULARURL = "http://localhost:8080/api/popular";
-  const PRODUCT_URL = "http://localhost:8080/api/products";
+  const PRODUCT_URL = "http://localhost:8080/api/search?keyword=camera";
 
   useEffect(() => {
     fetchPopularCategory(POPULARURL, setPopularCategory);
