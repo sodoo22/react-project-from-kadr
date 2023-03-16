@@ -2,10 +2,21 @@ import SubMenu from "./SubMenu";
 import { Navbar } from "react-bootstrap";
 // import Navbar from 'react-bootstrap/Navbar'
 import { GeoAlt } from "react-bootstrap-icons";
-import menus from "../data/menus";
+
 import SearchBar from "./SearchBar";
+import { useState, useEffect } from "react";
+import { fetchMenu } from "../services/fetchData";
 
 export default function MainMenu() {
+  const [menus, setMenus] = useState([]);
+  const URL = "http://localhost:8080/menu/all";
+
+  useEffect(() => {
+    fetchMenu(URL, setMenus);
+  }, []);
+
+  console.log(menus);
+
   const subMenus = menus.map((subMenu) => {
     return (
       <SubMenu
